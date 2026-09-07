@@ -6,7 +6,7 @@ const current = (Astro.currentLocale ?? 'en') as Locale;
 
 // Preserve the rest of the path when switching (for future multi-page support)
 const pathWithoutLocale = Astro.url.pathname
-  .replace(/^\/(en|es|fr|de)(?=\/|$)/, '')
+  .replace(/^\/(en|es|fr|de|nl)(?=\/|$)/, '')
   || '/';
 ---
 

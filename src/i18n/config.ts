@@ -1,5 +1,5 @@
 /** Supported locales (must match astro.config.mjs) */
-export const locales = ['en', 'es', 'fr', 'de'] as const;
+export const locales = ['en', 'es', 'fr', 'de', 'nl'] as const;
 export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = 'en';
@@ -10,6 +10,7 @@ export const localeNames: Record<Locale, string> = {
   es: 'Español',
   fr: 'Français',
   de: 'Deutsch',
+  nl: 'Nederlands',
 };
 
 /**
@@ -47,6 +48,9 @@ export const countryToLocale: Record<string, Locale> = {
   DE: 'de',
   AT: 'de',
   LI: 'de',
+  // Dutch-speaking
+  NL: 'nl',
+  SR: 'nl', // Suriname
   // CH left to browser preference (de/fr/it)
 };
 

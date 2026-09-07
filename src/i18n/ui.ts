@@ -10,7 +10,7 @@ export const ui = {
     'nav.homeAria': 'AgentJetson home',
 
     // Hero
-    'hero.eyebrow': 'Sovereign AI for public safety',
+    'hero.eyebrow': 'Sovereign AI for the public good',
     'hero.title.1': 'Video records the past.',
     'hero.title.2': 'Agent Jetson',
     'hero.title.3': 'tells you what’s happening right now.',
@@ -24,7 +24,7 @@ export const ui = {
     // Positioning
     'pos.label': 'Positioning',
     'pos.title': 'Defense-grade. Human-governed. Sovereign.',
-    'pos.1.title': 'Sovereign AI for public safety',
+    'pos.1.title': 'Sovereign AI for the public good',
     'pos.1.body':
       'Defense-grade models run under agency authority. Data, policies, and decisions stay inside your controlled boundary.',
     'pos.2.title': 'Edge intelligence for every officer',
@@ -267,6 +267,78 @@ export const ui = {
     'footer.tagline': 'Intelligenz am Rand jeder Begegnung.',
     'footer.rights': 'Defense-Grade. Menschlich gesteuert. Souverän.',
   },
+
+  nl: {
+    // Header
+    'nav.capabilities': 'Mogelijkheden',
+    'nav.edge': 'Edge AI',
+    'nav.contact': 'Contact',
+    'nav.cta': 'Briefing aanvragen',
+    'nav.homeAria': 'AgentJetson home',
+
+    // Hero
+    'hero.eyebrow': 'Soevereine AI voor het algemeen belang',
+    'hero.title.1': 'Video legt het verleden vast.',
+    'hero.title.2': 'Agent Jetson',
+    'hero.title.3': 'vertelt u wat er nú gebeurt.',
+    'hero.lede':
+      'Van passieve camera’s naar actieve intelligentie. Realtime detectie met volledige controle voor uw organisatie — op de plek van elke ontmoeting.',
+    'hero.cta.primary': 'Vraag een briefing aan',
+    'hero.cta.secondary': 'Bekijk mogelijkheden',
+    'hero.mantra': '“Intelligentie op de plek van elke ontmoeting.”',
+    'hero.liveLabel': 'LIVE EDGE · DETECTEREN',
+
+    // Positioning
+    'pos.label': 'Positionering',
+    'pos.title': 'Defensiekwaliteit. Menselijk beheer. Soeverein.',
+    'pos.1.title': 'Soevereine AI voor het algemeen belang',
+    'pos.1.body':
+      'Modellen van defensiekwaliteit draaien onder gezag van uw organisatie. Data, beleid en beslissingen blijven binnen uw gecontroleerde grenzen.',
+    'pos.2.title': 'Edge-intelligentie voor elke agent',
+    'pos.2.body':
+      'Situatiebewustzijn reist mee met de patrouille — bodycams, dashcams, mobiele apparaten en vaste feeds worden actieve sensoren.',
+    'pos.3.title': 'Bewustzijn vóór het contact',
+    'pos.3.body':
+      'Detecteer, identificeer, koppel en waarschuw in realtime, zodat agenten weten wat van belang is voordat er contact wordt gemaakt.',
+
+    // Features
+    'feat.label': 'Mogelijkheden',
+    'feat.title': 'Gebouwd voor de straat, niet het lab.',
+    'feat.1.title': 'Realtime multimodale detectie',
+    'feat.1.body':
+      'Personen, voertuigen, kentekens en interessante objecten — continu geanalyseerd vanuit live streams op basis van geautoriseerde controlelijsten.',
+    'feat.2.title': 'Werkt met uw bestaande apparatuur',
+    'feat.2.body':
+      'Vaste camera’s, ANPR, dashcams, bodycams, drones en mobiele bronnen worden een actief detectienetwerk.',
+    'feat.3.title': 'Edge-first, cloud-optioneel',
+    'feat.3.body':
+      'Verwerk data waar deze wordt gegenereerd. Bewaar gevoelige videobeelden lokaal of op de edge; escaleer alleen wanneer het beleid dit toestaat.',
+
+    // Edge
+    'edge.label': 'Edge AI',
+    'edge.title': 'Intelligentie die meereist met de missie.',
+    'edge.body':
+      'Agent Jetson draait op NVIDIA Jetson-hardware en geharde edge-nodes. Zo blijft detectie lokaal, met lage vertraging en onder uw controle — zelfs als het netwerk wegvalt.',
+
+    // CTA / Contact
+    'cta.label': 'Contact',
+    'cta.title': 'Klaar om actieve intelligentie naar de straat te brengen?',
+    'cta.lede':
+      'Vraag een besloten briefing aan. We stemmen Agent Jetson af op uw bestaande camera’s, beleid en operationele vereisten.',
+    'cta.name': 'Naam',
+    'cta.namePlaceholder': 'Volledige naam',
+    'cta.email': 'E-mailadres',
+    'cta.emailPlaceholder': 'u@organisatie.nl',
+    'cta.org': 'Organisatie',
+    'cta.orgPlaceholder': 'Instantie of afdeling',
+    'cta.message': 'Bericht',
+    'cta.messagePlaceholder': 'Korte context, gebruikte camera’s, tijdslijn…',
+    'cta.submit': 'Briefing aanvragen',
+
+    // Footer
+    'footer.tagline': 'Intelligentie op de plek van elke ontmoeting.',
+    'footer.rights': 'Defensiekwaliteit. Menselijk beheer. Soeverein.',
+  }
 } as const;
 
 export type UIKey = keyof typeof ui.en;
