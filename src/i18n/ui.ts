@@ -284,7 +284,7 @@ export const ui = {
     'hero.lede':
       'Van passieve camera’s naar actieve intelligentie. Realtime detectie met volledige controle voor uw organisatie — op de plek van elke ontmoeting.',
     'hero.cta.primary': 'Vraag een briefing aan',
-    'hero.cta.secondary': 'Bekijk mogelijkheden',
+    'hero.cta.secondary': 'Bekijk de mogelijkheden',
     'hero.mantra': '“Intelligentie op de plek van elke ontmoeting.”',
     'hero.liveLabel': 'LIVE EDGE · DETECTEREN',
 
