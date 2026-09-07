@@ -1,0 +1,88 @@
+---
+const points = [
+  {
+    title: "Sovereign AI for public safety",
+    body: "Defense-grade models run under agency authority. Data, policies, and decisions stay inside your controlled boundary.",
+  },
+  {
+    title: "Edge intelligence for every officer",
+    body: "Awareness travels with the patrol — body cams, dash cams, mobile devices, and fixed feeds become active sensors.",
+  },
+  {
+    title: "Awareness before encounter",
+    body: "Detect, identify, correlate, and alert in real time so officers know what matters before contact is made.",
+  },
+];
+---
+
+<section class="positioning">
+  <div class="inner">
+    <p class="section-label">Positioning</p>
+    <h2>Defense-grade. Human-governed. Sovereign.</h2>
+    <div class="grid">
+      {points.map((p) => (
+        <article class="card">
+          <h3>{p.title}</h3>
+          <p>{p.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .positioning {
+    border-top: 1px solid var(--border);
+    background: var(--bg-elevated);
+  }
+
+  .inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+  }
+
+  .section-label {
+    margin: 0 0 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cyan);
+  }
+
+  h2 {
+    margin: 0 0 2.5rem;
+    font-size: clamp(1.6rem, 3vw, 2.15rem);
+    max-width: 20ch;
+  }
+
+  .grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+  }
+
+  .card h3 {
+    margin: 0 0 0.6rem;
+    font-size: 1.05rem;
+  }
+
+  .card p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

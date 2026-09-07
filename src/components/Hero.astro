@@ -1,0 +1,190 @@
+---
+---
+
+<section class="hero">
+  <div class="inner">
+    <p class="eyebrow">Sovereign AI for public safety</p>
+    <h1>
+      Video records the past.<br />
+      <span class="accent">Agent Jetson</span> tells you what’s happening right now.
+    </h1>
+    <p class="lede">
+      From passive cameras to active intelligence. Real-time detection with full agency control —
+      at the edge of every encounter.
+    </p>
+    <div class="actions">
+      <a href="#contact" class="btn primary">Request a briefing</a>
+      <a href="#capabilities" class="btn ghost">See capabilities</a>
+    </div>
+    <p class="mantra">“Intelligence at the edge of every encounter.”</p>
+  </div>
+  <div class="visual" aria-hidden="true">
+    <!-- Placeholder for future GIF / product animation -->
+    <div class="frame">
+      <div class="scan"></div>
+      <div class="label">LIVE EDGE · DETECTING</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 3.5rem;
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    margin: 0 0 1rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    color: #93c5fd;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 0 0 1.25rem;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    max-width: 18ch;
+  }
+
+  .accent {
+    background: linear-gradient(90deg, #60a5fa, #22d3ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .lede {
+    margin: 0 0 2rem;
+    max-width: 36rem;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.35rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.15s;
+  }
+
+  .btn.primary {
+    background: var(--accent);
+    color: white;
+  }
+
+  .btn.primary:hover {
+    background: #2563eb;
+    box-shadow: 0 0 24px var(--accent-glow);
+  }
+
+  .btn.ghost {
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+    background: transparent;
+  }
+
+  .btn.ghost:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .mantra {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+
+  .visual {
+    display: none;
+  }
+
+  .frame {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    border-radius: var(--radius-lg);
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(59, 130, 246, 0.2), transparent 50%),
+      radial-gradient(ellipse at 70% 80%, rgba(34, 211, 238, 0.12), transparent 45%),
+      var(--bg-card);
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .scan {
+    position: absolute;
+    inset: 12% 10%;
+    border: 1px solid rgba(34, 211, 238, 0.35);
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(34, 211, 238, 0.15);
+  }
+
+  .scan::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #22d3ee, transparent);
+    animation: sweep 2.8s ease-in-out infinite;
+  }
+
+  .label {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: #67e8f9;
+    opacity: 0.85;
+  }
+
+  @keyframes sweep {
+    0% {
+      top: 8%;
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      top: 88%;
+      opacity: 0.3;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .hero {
+      grid-template-columns: 1.15fr 0.85fr;
+      padding-top: 5.5rem;
+      padding-bottom: 4.5rem;
+    }
+
+    .visual {
+      display: block;
+    }
+  }
+</style>

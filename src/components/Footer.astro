@@ -1,0 +1,82 @@
+---
+---
+
+<footer class="footer">
+  <div class="inner">
+    <div class="brand">
+      <span class="mark">AJ</span>
+      <div>
+        <strong>AgentJetson</strong>
+        <p>Intelligence at the edge of every encounter.</p>
+      </div>
+    </div>
+    <div class="meta">
+      <p>© {new Date().getFullYear()} AgentJetson.ai</p>
+      <p>Defense-grade. Human-governed. Sovereign.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg-elevated);
+  }
+
+  .inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .mark {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #3b82f6, #22d3ee);
+    color: #04101a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .brand strong {
+    display: block;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1rem;
+  }
+
+  .brand p {
+    margin: 0.2rem 0 0;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+
+  .meta {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+  }
+
+  .meta p {
+    margin: 0.15rem 0;
+  }
+
+  @media (min-width: 640px) {
+    .inner {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+  }
+</style>

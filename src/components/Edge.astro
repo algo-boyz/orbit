@@ -1,0 +1,112 @@
+---
+const pillars = [
+  {
+    title: "Immediate intelligence",
+    body: "No waiting for video to reach a central stack. Detection and correlation happen while the situation is live.",
+  },
+  {
+    title: "Mobile awareness",
+    body: "Intelligence is no longer limited to fixed camera footprints. Coverage moves with officers and vehicles.",
+  },
+  {
+    title: "Operational resilience",
+    body: "Edge execution reduces dependence on continuous cloud connectivity and keeps critical function available in constrained environments.",
+  },
+  {
+    title: "Sovereign boundary",
+    body: "Sensitive video and models stay inside agency-controlled deployment. Correlation with authorized sources remains under policy.",
+  },
+];
+---
+
+<section class="edge" id="edge">
+  <div class="inner">
+    <div class="copy">
+      <p class="section-label">Edge architecture</p>
+      <h2>Cloud AI was the start. Edge AI is the next evolution.</h2>
+      <p class="lede">
+        Traditional systems capture and store. Agent Jetson analyzes at the edge — turning live
+        feeds into detection, identification, correlation, and alerts under human authority.
+      </p>
+    </div>
+    <div class="pillars">
+      {pillars.map((p) => (
+        <div class="pillar">
+          <h3>{p.title}</h3>
+          <p>{p.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .edge {
+    border-top: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);
+  }
+
+  .inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem;
+    display: grid;
+    gap: 3rem;
+  }
+
+  .section-label {
+    margin: 0 0 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cyan);
+  }
+
+  h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.6rem, 3vw, 2.15rem);
+    max-width: 22ch;
+  }
+
+  .lede {
+    margin: 0;
+    max-width: 36rem;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+  }
+
+  .pillars {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .pillar {
+    padding: 1.25rem 1.4rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: rgba(18, 23, 34, 0.6);
+  }
+
+  .pillar h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1rem;
+  }
+
+  .pillar p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+  }
+
+  @media (min-width: 768px) {
+    .inner {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+
+    .pillars {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

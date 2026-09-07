@@ -1,0 +1,108 @@
+---
+const links = [
+  { href: "#capabilities", label: "Capabilities" },
+  { href: "#edge", label: "Edge AI" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
+<header class="header">
+  <div class="inner">
+    <a href="/" class="logo" aria-label="AgentJetson home">
+      <span class="mark">AJ</span>
+      <span class="name">AgentJetson</span>
+    </a>
+    <nav class="nav">
+      {links.map((l) => (
+        <a href={l.href}>{l.label}</a>
+      ))}
+    </nav>
+    <a href="#contact" class="cta">Request briefing</a>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(16px);
+    background: rgba(7, 9, 15, 0.75);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-weight: 600;
+  }
+
+  .mark {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #3b82f6, #22d3ee);
+    color: #04101a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .name {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+  }
+
+  .nav {
+    display: none;
+    gap: 1.75rem;
+  }
+
+  .nav a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+
+  .nav a:hover {
+    color: var(--text);
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: background 0.15s, box-shadow 0.15s;
+  }
+
+  .cta:hover {
+    background: #2563eb;
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+
+  @media (min-width: 768px) {
+    .nav {
+      display: flex;
+    }
+  }
+</style>
