@@ -1,10 +1,10 @@
 /**
  * Cloudflare Pages Function — POST /api/contact
  *
- * Secrets (set in Cloudflare dashboard → Pages project → Settings → Environment variables):
+ * Secrets (Pages → Settings → Variables and secrets → Runtime):
  *   RESEND_API_KEY   – from https://resend.com
- *   CONTACT_TO       – where briefing requests land (e.g. hello@agentjetson.ai)
- *   CONTACT_FROM     – verified sender on Resend (e.g. "AgentJetson <noreply@agentjetson.ai>")
+ *   CONTACT_TO       – e.g. hello@agentjetson.ai
+ *   CONTACT_FROM     – verified sender, e.g. "AgentJetson <noreply@agentjetson.ai>"
  */
 
 interface Env {
@@ -21,6 +21,12 @@ interface ContactBody {
   botcheck?: string | boolean;
 }
 
+/** Minimal context shape used by Pages Functions (no @cloudflare/workers-types required). */
+interface EventContext {
+  request: Request;
+  env: Env;
+}
+
 const json = (data: unknown, status = 200) =>
   new Response(JSON.stringify(data), {
     status,
@@ -32,10 +38,11 @@ const json = (data: unknown, status = 200) =>
     },
   });
 
-export const onRequestOptions: PagesFunction = async () =>
-  json(null, 204);
+export async function onRequestOptions(): Promise<Response> {
+  return json(null, 204);
+}
 
-export const onRequestPost: PagesFunction<Env> = async (context) => {
+export async function onRequestPost(context: EventContext): Promise<Response> {
   const { request, env } = context;
 
   if (!env.RESEND_API_KEY || !env.CONTACT_TO || !env.CONTACT_FROM) {
@@ -118,7 +125,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
 
   return json({ success: true, message: "Thank you. We’ll be in touch shortly." });
-};
+}
 
 function escapeHtml(s: string): string {
   return s
