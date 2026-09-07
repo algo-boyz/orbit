@@ -2,3 +2,4 @@ node_modules/*
 .wrangler
 .vscode
 .astro
+package-lock.json
