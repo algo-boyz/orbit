@@ -1,4 +1,7 @@
 ---
+// Server-render so middleware can read Accept-Language + CF-IPCountry
+export const prerender = false;
+
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";

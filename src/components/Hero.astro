@@ -1,28 +1,29 @@
 ---
+import { useTranslations } from '../i18n/ui';
+
+const t = useTranslations(Astro.currentLocale);
 ---
 
 <section class="hero">
   <div class="inner">
-    <p class="eyebrow">Sovereign AI for public safety</p>
+    <p class="eyebrow">{t('hero.eyebrow')}</p>
     <h1>
-      Video records the past.<br />
-      <span class="accent">Agent Jetson</span> tells you what’s happening right now.
+      {t('hero.title.1')}<br />
+      <span class="accent">{t('hero.title.2')}</span> {t('hero.title.3')}
     </h1>
     <p class="lede">
-      From passive cameras to active intelligence. Real-time detection with full agency control —
-      at the edge of every encounter.
+      {t('hero.lede')}
     </p>
     <div class="actions">
-      <a href="#contact" class="btn primary">Request a briefing</a>
-      <a href="#capabilities" class="btn ghost">See capabilities</a>
+      <a href="#contact" class="btn primary">{t('hero.cta.primary')}</a>
+      <a href="#capabilities" class="btn ghost">{t('hero.cta.secondary')}</a>
     </div>
-    <p class="mantra">“Intelligence at the edge of every encounter.”</p>
+    <p class="mantra">{t('hero.mantra')}</p>
   </div>
   <div class="visual" aria-hidden="true">
-    <!-- Placeholder for future GIF / product animation -->
     <div class="frame">
       <div class="scan"></div>
-      <div class="label">LIVE EDGE · DETECTING</div>
+      <div class="label">{t('hero.liveLabel')}</div>
     </div>
   </div>
 </section>
@@ -53,40 +54,36 @@
 
   h1 {
     margin: 0 0 1.25rem;
-    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-size: clamp(2rem, 5vw, 3.1rem);
     max-width: 18ch;
   }
 
   .accent {
-    background: linear-gradient(90deg, #60a5fa, #22d3ee);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--cyan);
   }
 
   .lede {
-    margin: 0 0 2rem;
-    max-width: 36rem;
+    margin: 0 0 1.75rem;
     color: var(--text-muted);
     font-size: 1.1rem;
+    max-width: 38ch;
   }
 
   .actions {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .btn {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1.35rem;
+    padding: 0.7rem 1.25rem;
     border-radius: 999px;
     font-size: 0.95rem;
     font-weight: 600;
-    transition: all 0.15s;
+    transition: background 0.15s, box-shadow 0.15s, color 0.15s;
   }
 
   .btn.primary {
@@ -96,24 +93,22 @@
 
   .btn.primary:hover {
     background: #2563eb;
-    box-shadow: 0 0 24px var(--accent-glow);
+    box-shadow: 0 0 0 3px var(--accent-soft);
   }
 
   .btn.ghost {
     border: 1px solid var(--border-strong);
     color: var(--text);
-    background: transparent;
   }
 
   .btn.ghost:hover {
-    border-color: rgba(255, 255, 255, 0.25);
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--bg-card);
   }
 
   .mantra {
     margin: 0;
     color: var(--text-dim);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-style: italic;
   }
 
@@ -125,62 +120,50 @@
     position: relative;
     aspect-ratio: 16 / 10;
     border-radius: var(--radius-lg);
-    background:
-      radial-gradient(ellipse at 30% 20%, rgba(59, 130, 246, 0.2), transparent 50%),
-      radial-gradient(ellipse at 70% 80%, rgba(34, 211, 238, 0.12), transparent 45%),
-      var(--bg-card);
+    background: linear-gradient(145deg, #0f172a, #020617);
     border: 1px solid var(--border);
     overflow: hidden;
   }
 
   .scan {
     position: absolute;
-    inset: 12% 10%;
-    border: 1px solid rgba(34, 211, 238, 0.35);
-    border-radius: 8px;
-    box-shadow: 0 0 40px rgba(34, 211, 238, 0.15);
-  }
-
-  .scan::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #22d3ee, transparent);
-    animation: sweep 2.8s ease-in-out infinite;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(34, 211, 238, 0.12) 50%,
+      transparent 100%
+    );
+    animation: scan 3s ease-in-out infinite;
   }
 
   .label {
     position: absolute;
     bottom: 1rem;
     left: 1rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.55);
+    color: var(--cyan);
     font-size: 0.7rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
-    color: #67e8f9;
-    opacity: 0.85;
+    letter-spacing: 0.06em;
   }
 
-  @keyframes sweep {
-    0% {
-      top: 8%;
-      opacity: 0.3;
+  @keyframes scan {
+    0%,
+    100% {
+      transform: translateY(-100%);
     }
     50% {
-      opacity: 1;
-    }
-    100% {
-      top: 88%;
-      opacity: 0.3;
+      transform: translateY(100%);
     }
   }
 
   @media (min-width: 900px) {
     .hero {
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.1fr 0.9fr;
       padding-top: 5.5rem;
-      padding-bottom: 4.5rem;
     }
 
     .visual {

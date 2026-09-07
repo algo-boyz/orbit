@@ -1,45 +1,18 @@
 ---
-const pillars = [
-  {
-    title: "Immediate intelligence",
-    body: "No waiting for video to reach a central stack. Detection and correlation happen while the situation is live.",
-  },
-  {
-    title: "Mobile awareness",
-    body: "Intelligence is no longer limited to fixed camera footprints. Coverage moves with officers and vehicles.",
-  },
-  {
-    title: "Operational resilience",
-    body: "Edge execution reduces dependence on continuous cloud connectivity and keeps critical function available in constrained environments.",
-  },
-  {
-    title: "Sovereign boundary",
-    body: "Sensitive video and models stay inside agency-controlled deployment. Correlation with authorized sources remains under policy.",
-  },
-];
+import { useTranslations } from '../i18n/ui';
+
+const t = useTranslations(Astro.currentLocale);
 ---
 
 <section class="edge" id="edge">
   <div class="inner">
     <div class="copy">
-      <p class="section-label">Edge architecture</p>
-      <h2>Cloud AI was the start. Edge AI is the next evolution.</h2>
-      <p class="lede">
-        Traditional systems capture and store. Agent Jetson analyzes at the edge — turning live
-        feeds into detection, identification, correlation, and alerts under human authority.
-      </p>
-    </div>
-    <div class="pillars">
-      {pillars.map((p) => (
-        <div class="pillar">
-          <h3>{p.title}</h3>
-          <p>{p.body}</p>
-        </div>
-      ))}
+      <p class="section-label">{t('edge.label')}</p>
+      <h2>{t('edge.title')}</h2>
+      <p class="lede">{t('edge.body')}</p>
     </div>
   </div>
 </section>
-
 <style>
   .edge {
     border-top: 1px solid var(--border);

@@ -1,14 +1,14 @@
 ---
+import { useTranslations } from '../i18n/ui';
+
+const t = useTranslations(Astro.currentLocale);
 ---
 
 <section class="cta" id="contact">
   <div class="inner">
-    <p class="section-label">Contact</p>
-    <h2>Ready to bring active intelligence to the street?</h2>
-    <p class="lede">
-      Request a private briefing. We’ll map Agent Jetson to your existing cameras, policies, and
-      operational requirements.
-    </p>
+    <p class="section-label">{t('cta.label')}</p>
+    <h2>{t('cta.title')}</h2>
+    <p class="lede">{t('cta.lede')}</p>
 
     <form class="form" id="briefing-form" novalidate>
       <!-- Honeypot — leave empty; bots fill it, humans don't -->
@@ -16,27 +16,27 @@
 
       <div class="row">
         <label>
-          <span>Name</span>
-          <input type="text" name="name" required autocomplete="name" placeholder="Full name" />
+          <span>{t('cta.name')}</span>
+          <input type="text" name="name" required autocomplete="name" placeholder={t('cta.namePlaceholder')} />
         </label>
         <label>
-          <span>Email</span>
-          <input type="email" name="email" required autocomplete="email" placeholder="you@agency.gov" />
+          <span>{t('cta.email')}</span>
+          <input type="email" name="email" required autocomplete="email" placeholder={t('cta.emailPlaceholder')} />
         </label>
       </div>
 
       <label>
-        <span>Organization</span>
-        <input type="text" name="organization" autocomplete="organization" placeholder="Agency or department" />
+        <span>{t('cta.org')}</span>
+        <input type="text" name="organization" autocomplete="organization" placeholder={t('cta.orgPlaceholder')} />
       </label>
 
       <label>
-        <span>Message</span>
-        <textarea name="message" rows="4" required placeholder="Brief context, cameras in use, timeline…"></textarea>
+        <span>{t('cta.message')}</span>
+        <textarea name="message" rows="4" required placeholder={t('cta.messagePlaceholder')}></textarea>
       </label>
 
       <button type="submit" class="btn" id="submit-btn">
-        Request briefing
+        {t('cta.submit')}
       </button>
 
       <p class="status" id="form-status" role="status" aria-live="polite" hidden></p>
@@ -45,66 +45,6 @@
     <p class="note">Or email <a href="mailto:hello@agentjetson.ai">hello@agentjetson.ai</a> · agentjetson.ai</p>
   </div>
 </section>
-
-<script>
-  const form = document.getElementById("briefing-form") as HTMLFormElement | null;
-  const statusEl = document.getElementById("form-status");
-  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement | null;
-
-  if (form && statusEl && submitBtn) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      statusEl.hidden = true;
-      statusEl.className = "status";
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Sending…";
-
-      const formData = new FormData(form);
-
-      // Honeypot — if checked, pretend success and stop
-      if (formData.get("botcheck")) {
-        statusEl.textContent = "Thank you. We’ll be in touch shortly.";
-        statusEl.classList.add("success");
-        statusEl.hidden = false;
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Request briefing";
-        return;
-      }
-
-      const payload = {
-        name: String(formData.get("name") || ""),
-        email: String(formData.get("email") || ""),
-        organization: String(formData.get("organization") || ""),
-        message: String(formData.get("message") || ""),
-      };
-
-      try {
-        const res = await fetch("/api/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-        const data = await res.json();
-
-        if (res.ok && data.success) {
-          form.reset();
-          statusEl.textContent = data.message || "Thank you. We’ll be in touch shortly.";
-          statusEl.classList.add("success");
-        } else {
-          statusEl.textContent = data.message || "Something went wrong. Please email us directly.";
-          statusEl.classList.add("error");
-        }
-      } catch {
-        statusEl.textContent = "Network error. Please email hello@agentjetson.ai.";
-        statusEl.classList.add("error");
-      }
-
-      statusEl.hidden = false;
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Request briefing";
-    });
-  }
-</script>
 
 <style>
   .cta {

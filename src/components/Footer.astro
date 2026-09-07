@@ -1,4 +1,8 @@
 ---
+import { useTranslations } from '../i18n/ui';
+
+const t = useTranslations(Astro.currentLocale);
+const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
@@ -7,12 +11,12 @@
       <span class="mark">AJ</span>
       <div>
         <strong>AgentJetson</strong>
-        <p>Intelligence at the edge of every encounter.</p>
+        <p>{t('footer.tagline')}</p>
       </div>
     </div>
     <div class="meta">
-      <p>© {new Date().getFullYear()} AgentJetson.ai</p>
-      <p>Defense-grade. Human-governed. Sovereign.</p>
+      <p>© {year} AgentJetson.ai</p>
+      <p>{t('footer.rights')}</p>
     </div>
   </div>
 </footer>

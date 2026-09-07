@@ -1,24 +1,19 @@
 ---
+import { useTranslations } from '../i18n/ui';
+
+const t = useTranslations(Astro.currentLocale);
+
 const points = [
-  {
-    title: "Sovereign AI for public safety",
-    body: "Defense-grade models run under agency authority. Data, policies, and decisions stay inside your controlled boundary.",
-  },
-  {
-    title: "Edge intelligence for every officer",
-    body: "Awareness travels with the patrol — body cams, dash cams, mobile devices, and fixed feeds become active sensors.",
-  },
-  {
-    title: "Awareness before encounter",
-    body: "Detect, identify, correlate, and alert in real time so officers know what matters before contact is made.",
-  },
+  { title: t('pos.1.title'), body: t('pos.1.body') },
+  { title: t('pos.2.title'), body: t('pos.2.body') },
+  { title: t('pos.3.title'), body: t('pos.3.body') },
 ];
 ---
 
 <section class="positioning">
   <div class="inner">
-    <p class="section-label">Positioning</p>
-    <h2>Defense-grade. Human-governed. Sovereign.</h2>
+    <p class="section-label">{t('pos.label')}</p>
+    <h2>{t('pos.title')}</h2>
     <div class="grid">
       {points.map((p) => (
         <article class="card">

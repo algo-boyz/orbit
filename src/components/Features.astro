@@ -1,40 +1,19 @@
 ---
+import { useTranslations } from '../i18n/ui';
+
+const t = useTranslations(Astro.currentLocale);
+
 const features = [
-  {
-    title: "Real-time multi-modal detection",
-    body: "Persons, vehicles, plates, and objects of interest — analyzed continuously from live streams against authorized watchlists.",
-  },
-  {
-    title: "Works with what you already have",
-    body: "Fixed cameras, ALPR, dash cams, body-worn cameras, drones, and mobile sources become an active detection network.",
-  },
-  {
-    title: "Edge-first, cloud-optional",
-    body: "Processing happens at or near the point of capture. Critical capability remains when connectivity is limited or denied.",
-  },
-  {
-    title: "Agency control by design",
-    body: "Models, data, access, and operational policy stay under your authority. AI surfaces awareness; humans decide the response.",
-  },
-  {
-    title: "Immediate operational alerts",
-    body: "When a match is identified, actionable signals can reach officers, dispatch, and command while the event is still unfolding.",
-  },
-  {
-    title: "Auditable & policy-aligned",
-    body: "Every detection path is designed for oversight, compliance, and human authority — not autonomous enforcement.",
-  },
+  { title: t('feat.1.title'), body: t('feat.1.body') },
+  { title: t('feat.2.title'), body: t('feat.2.body') },
+  { title: t('feat.3.title'), body: t('feat.3.body') },
 ];
 ---
 
 <section class="features" id="capabilities">
   <div class="inner">
-    <p class="section-label">Capabilities</p>
-    <h2>From passive cameras to active intelligence</h2>
-    <p class="intro">
-      Agent Jetson turns existing video infrastructure into a real-time operational capability —
-      detecting, correlating, and alerting without waiting for after-the-fact review.
-    </p>
+    <p class="section-label">{t('feat.label')}</p>
+    <h2>{t('feat.title')}</h2>
     <div class="grid">
       {features.map((f) => (
         <article class="card">
@@ -46,7 +25,6 @@ const features = [
     </div>
   </div>
 </section>
-
 <style>
   .features {
     border-top: 1px solid var(--border);

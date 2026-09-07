@@ -8,10 +8,12 @@ const {
   title = "AgentJetson.ai — Intelligence at the edge of every encounter",
   description = "Sovereign edge AI that turns live video into real-time detection and operational intelligence for public safety. Defense-grade. Human-governed. Sovereign.",
 } = Astro.props;
+
+const lang = Astro.currentLocale ?? 'en';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

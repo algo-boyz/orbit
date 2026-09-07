@@ -1,14 +1,19 @@
 ---
+import { useTranslations } from '../i18n/ui';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+const t = useTranslations(Astro.currentLocale);
+
 const links = [
-  { href: "#capabilities", label: "Capabilities" },
-  { href: "#edge", label: "Edge AI" },
-  { href: "#contact", label: "Contact" },
+  { href: '#capabilities', label: t('nav.capabilities') },
+  { href: '#edge', label: t('nav.edge') },
+  { href: '#contact', label: t('nav.contact') },
 ];
 ---
 
 <header class="header">
   <div class="inner">
-    <a href="/" class="logo" aria-label="AgentJetson home">
+    <a href="/" class="logo" aria-label={t('nav.homeAria')}>
       <span class="mark">AJ</span>
       <span class="name">AgentJetson</span>
     </a>
@@ -17,7 +22,10 @@ const links = [
         <a href={l.href}>{l.label}</a>
       ))}
     </nav>
-    <a href="#contact" class="cta">Request briefing</a>
+    <div class="actions">
+      <LanguageSwitcher />
+      <a href="#contact" class="cta">{t('nav.cta')}</a>
+    </div>
   </div>
 </header>
 
@@ -81,6 +89,12 @@ const links = [
 
   .nav a:hover {
     color: var(--text);
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
   }
 
   .cta {
