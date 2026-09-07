@@ -1,11 +1,19 @@
 ---
+
 title: "Schüsse auf Polizeibeamte: Wie Edge-KI den Ausgang in Kusel hätte ändern können"
+
 description: "Als zwei Polizeikräfte während einer routinemäßigen Verkehrskontrolle im ländlichen Deutschland am Morgen hingerichtet wurden, zählte jede Sekunde. Die Edge-Intelligenz von Agent Jetson (AJ) hätte die ersten Schüsse erkennen, einen sofortigen „Officer Down“-Alarm auslösen & Fahrzeugbeschreibungen mit umfassenden Überwachungsdaten einschließlich Satellitenbildern abgleichen können, bevor die Täter entkamen."
+
 pubDate: 2026-09-07
+
 author: "AJ"
+
 tags: ["öffentliche-sicherheit", "edge-ki", "einsatzkräfteschutz", "fallstudie"]
+
 lang: de
+
 draft: false
+
 ---
 
 Am frühen kalten Morgen des 31. Januar 2022 führten zwei noch junge Polizeikräfte in der Nähe der Stadt Kusel in Rheinland-Pfalz eine Routinekontrolle durch. Sie hielten einen Transporter an. Im Inneren befanden sich mehr als zwanzig frisch geschossene Rehe. Beweise für gewerbsmäßige Wilderei. Binnen weniger Augenblicken wurde aus der Kontrolle eine regelrechte Hinrichtung.

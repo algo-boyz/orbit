@@ -1,11 +1,19 @@
 ---
+
 title: "Officer Down: How Real-Time Edge AI Could Have Changed the Outcome in Kusel"
+
 description: "When two police officers were executed during a routine traffic stop in rural Germany, seconds mattered. Agent Jetson’s edge intelligence could have detected the first shots, issued an immediate officer-down alert, & correlated vehicle descriptions with wider surveillance including satellite imagery before the killers escaped."
+
 pubDate: 2026-09-07
+
 author: "AJ"
+
 tags: ["public-safety", "edge-ai", "officer-safety", "case-study"]
+
 lang: en
+
 draft: false
+
 ---
 
 On the cold early morning of 31 January 2022, near the town of Kusel in Rhineland-Palatinate, Germany, two young police officers conducted what should have been a routine traffic stop. They pulled over a van. Inside were more than twenty freshly killed deer, evidence of commercial poaching. Within moments the stop turned into a point-blank execution.

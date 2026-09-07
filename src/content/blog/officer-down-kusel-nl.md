@@ -1,14 +1,22 @@
 ---
+
 title: "Agent Neer: Hoe Real-Time Edge AI de Uitkomst in Kusel had kunnen veranderen"
-description: "Het telde elke seconde toen twee politieagenten werden vermoord tijdens een routineuze verkeerscontrole op het Duitse platteland. De edge-intelligentie van Agent Jetson had de eerste schoten kunnen detecteren, direct een 'agent neer'-melding kunnen versturen en voertuigbeschrijvingen kunnen koppelen aan bredere bewaking — inclusief satellietbeelden — voordat de daders konden ontsnappen."
+
+description: "Het telde elke seconde toen twee politieagenten werden vermoord tijdens een routineuze verkeerscontrole op het Duitse platteland. De edge-intelligentie van Agent Jetson had de eerste schoten kunnen detecteren, direct een 'agent neer' melding kunnen versturen en voertuigbeschrijving en kenteken kunnen koppelen voordat de daders zelfs konden ontsnappen."
+
 pubDate: 2026-09-07
+
 author: "AgentJetson Team"
+
 tags: ["public-safety", "edge-ai", "officer-safety", "case-study"]
+
 lang: nl
+
 draft: false
+
 ---
 
-In de vroege ochtend van 31 januari 2022 voerden twee jonge politieagenten nabij het stadje Kusel in Rijnland-Palts (Duitsland) een verkeerscontrole uit die routine had moeten zijn. Ze droegen een bestelwagen op te stoppen. Daarin lagen meer dan twintig vers geschoten herten — bewijs van commerciële stroperij. Binnen enkele momenten veranderde de controle in een executie.
+In de koude vroege ochtend van 31 januari 2022 voerden twee jonge politieagenten nabij het stadje Kusel in Rijnland-Palts (Duitsland) een verkeerscontrole uit die routine had moeten zijn. Ze droegen een bestelwagen op te stoppen. Daarin lagen meer dan twintig vers geschoten herten — bewijs van commerciële stroperij. Binnen enkele momenten veranderde de controle in een executie.
 
 Volgens de bevindingen van de rechtbank opende de hoofdverdachte van dichtbij het vuur met een jachtgeweer op de 24-jarige vrouwelijke agent. Vervolgens richtte hij een jachtgeweer en een jachtgeweer op haar 29-jarige collega. De gewonde mannelijke agent wist nog een korte noodroep uit te sturen — “Ze schieten” — voordat beide agenten dodelijk gewond raakten. De vrouwelijke agent werd later nogmaals in het hoofd geschoten terwijl ze nog leefde. De daders sloegen op de vlucht en werden pas de volgende dag na een grote klopjacht aangehouden.
 
