@@ -1,18 +1,20 @@
 ---
 import { useTranslations } from '../i18n/ui';
+import logo from '../assets/veruvian-man.png';
 
 const t = useTranslations(Astro.currentLocale);
+const locale = Astro.currentLocale ?? 'en';
+
+const homeHref = locale === 'en' ? '/' : `/${locale}/`;
 const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
   <div class="inner">
     <div class="brand">
-      <span class="mark">AJ</span>
-      <div>
-        <strong>AgentJetson</strong>
-        <p>{t('footer.tagline')}</p>
-      </div>
+    <a href={homeHref} class="logo" aria-label={t('nav.homeAria')}>
+      <img src={logo.src} alt="" width="32" height="32" class="mark" />
+    </a>
     </div>
     <div class="meta">
       <p>© {year} AgentJetson.ai</p>
