@@ -8,6 +8,16 @@ export const ui = {
     'nav.contact': 'Contact',
     'nav.cta': 'Request briefing',
     'nav.homeAria': 'AgentJetson home',
+    'nav.blog': 'Blog',
+
+    // Blog
+    'blog.title': 'Blog — AgentJetson',
+    'blog.description': 'Insights on edge AI, officer safety, and real-time intelligence for public safety.',
+    'blog.eyebrow': 'Insights',
+    'blog.heading': 'From the edge',
+    'blog.lede': 'Operational lessons, capability deep-dives, and how real-time intelligence changes outcomes for officers on the street.',
+    'blog.back': '← All posts',
+    'blog.empty': 'No posts yet.',
 
     // Hero
     'hero.eyebrow': 'Sovereign AI for the public good',

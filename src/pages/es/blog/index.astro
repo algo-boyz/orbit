@@ -1,0 +1,180 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { useTranslations } from '../../../i18n/ui';
+
+const t = useTranslations(Astro.currentLocale);
+const locale = Astro.currentLocale ?? 'en';
+
+const allPosts = await getCollection('blog', ({ data }) => {
+  return !data.draft && data.lang === (locale === 'en' ? 'en' : locale);
+});
+
+// Fallback to English posts if no localized posts yet
+const posts =
+  allPosts.length > 0
+    ? allPosts
+    : await getCollection('blog', ({ data }) => !data.draft && data.lang === 'en');
+
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const title = t('blog.title') || 'Blog — AgentJetson';
+const description =
+  t('blog.description') ||
+  'Insights on edge AI, officer safety, and real-time intelligence for public safety.';
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main class="blog-index">
+    <div class="inner">
+      <header class="page-header">
+        <p class="eyebrow">{t('blog.eyebrow') || 'Insights'}</p>
+        <h1>{t('blog.heading') || 'From the edge'}</h1>
+        <p class="lede">
+          {t('blog.lede') ||
+            'Operational lessons, capability deep-dives, and how real-time intelligence changes outcomes for officers on the street.'}
+        </p>
+      </header>
+
+      <ul class="post-list">
+        {
+          posts.map((post) => (
+            <li>
+              <a href={`/blog/${post.id}/`} class="post-card">
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {post.data.pubDate.toLocaleDateString(locale, {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </time>
+                <h2>{post.data.title}</h2>
+                <p>{post.data.description}</p>
+                {post.data.tags.length > 0 && (
+                  <ul class="tags">
+                    {post.data.tags.map((tag) => (
+                      <li>{tag}</li>
+                    ))}
+                  </ul>
+                )}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      {
+        posts.length === 0 && (
+          <p class="empty">{t('blog.empty') || 'No posts yet.'}</p>
+        )
+      }
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .blog-index {
+    padding: 3rem 0 5rem;
+  }
+
+  .inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .page-header {
+    margin-bottom: 3rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cyan);
+  }
+
+  h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+  }
+
+  .lede {
+    margin: 0;
+    max-width: 40rem;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+  }
+
+  .post-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .post-card {
+    display: block;
+    padding: 1.5rem 1.75rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .post-card:hover {
+    border-color: var(--border-strong);
+    box-shadow: 0 0 0 1px var(--accent-soft);
+  }
+
+  .post-card time {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+
+  .post-card h2 {
+    margin: 0 0 0.6rem;
+    font-size: 1.25rem;
+    color: var(--text);
+  }
+
+  .post-card p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .tags {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tags li {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  .empty {
+    color: var(--text-dim);
+  }
+</style>

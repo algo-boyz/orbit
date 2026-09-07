@@ -1,20 +1,26 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import { useTranslations } from '../i18n/ui';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import logo from '../assets/veruvian-man.png';
 
 const t = useTranslations(Astro.currentLocale);
+const locale = Astro.currentLocale ?? 'en';
+
+const homeHref = locale === 'en' ? '/' : `/${locale}/`;
+const blogHref = locale === 'en' ? '/blog/' : `/${locale}/blog/`;
 
 const links = [
-  { href: '#capabilities', label: t('nav.capabilities') },
-  { href: '#edge', label: t('nav.edge') },
-  { href: '#contact', label: t('nav.contact') },
+  { href: `${homeHref}#capabilities`, label: t('nav.capabilities') },
+  { href: `${homeHref}#edge`, label: t('nav.edge') },
+  { href: blogHref, label: t('nav.blog') },
+  { href: `${homeHref}#contact`, label: t('nav.contact') },
 ];
 ---
 
 <header class="header">
   <div class="inner">
-    <a href="/" class="logo" aria-label={t('nav.homeAria')}>
+    <a href={homeHref} class="logo" aria-label={t('nav.homeAria')}>
       <img src={logo.src} alt="" width="32" height="32" class="mark" />
       <span class="name">AgentJetson</span>
     </a>
@@ -25,7 +31,7 @@ const links = [
     </nav>
     <div class="actions">
       <LanguageSwitcher />
-      <a href="#contact" class="cta">{t('nav.cta')}</a>
+      <a href={`${homeHref}#contact`} class="cta">{t('nav.cta')}</a>
     </div>
   </div>
 </header>
