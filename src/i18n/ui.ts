@@ -90,6 +90,14 @@ export const ui = {
     'nav.cta': 'Solicitar briefing',
     'nav.homeAria': 'Inicio AgentJetson',
 
+    'blog.title': 'Blog — AgentJetson',
+    'blog.description': 'Información sobre IA en el edge, la seguridad de los agentes y la inteligencia en tiempo real para la seguridad pública.',
+    'blog.eyebrow': 'Perspectivas',
+    'blog.heading': 'Desde el edge',
+    'blog.lede': 'Lecciones operativas, análisis detallados de las capacidades y cómo la inteligencia en tiempo real transforma los resultados para los agentes sobre el terreno.',
+    'blog.back': '← Todos los artículos',
+    'blog.empty': 'Aún no hay artículos.',
+
     'hero.eyebrow': 'IA soberana para la seguridad pública',
     'hero.title.1': 'El vídeo registra el pasado.',
     'hero.title.2': 'Agent Jetson',
@@ -155,6 +163,14 @@ export const ui = {
     'nav.cta': 'Demander un briefing',
     'nav.homeAria': 'Accueil AgentJetson',
 
+    'blog.title': 'Blog — AgentJetson',
+    'blog.description': 'Insights sur l’IA en périphérie, la sécurité des agents et le renseignement en temps réel pour la sécurité publique.',
+    'blog.eyebrow': 'Insights',
+    'blog.heading': 'Depuis le terrain',
+    'blog.lede': 'Retours d’expérience opérationnels, analyses approfondies des capacités et regard sur la façon dont le renseignement en temps réel transforme les interventions des agents sur le terrain.',
+    'blog.back': '← Tous les articles',
+    'blog.empty': 'Aucun article pour le moment.',
+
     'hero.eyebrow': 'IA souveraine pour la sécurité publique',
     'hero.title.1': 'La vidéo enregistre le passé.',
     'hero.title.2': 'Agent Jetson',
@@ -219,6 +235,14 @@ export const ui = {
     'nav.contact': 'Kontakt',
     'nav.cta': 'Briefing anfordern',
     'nav.homeAria': 'AgentJetson Startseite',
+
+    'blog.title': 'Blog — AgentJetson',
+    'blog.description': 'Einblicke in Edge-KI, die Sicherheit von Einsatzkräften und Echtzeitinformationen für die öffentliche Sicherheit.',
+    'blog.eyebrow': 'Einblicke',
+    'blog.heading': 'Am Edge',
+    'blog.lede': 'Erkenntnisse aus dem Einsatz, tiefgehende Einblicke in Fähigkeiten und wie Echtzeitinformationen die Ergebnisse für Einsatzkräfte im Außendienst verändern.',
+    'blog.back': '← Alle Beiträge',
+    'blog.empty': 'Noch keine Beiträge.',
 
     'hero.eyebrow': 'Souveräne KI für die öffentliche Sicherheit',
     'hero.title.1': 'Video zeichnet die Vergangenheit auf.',
@@ -286,6 +310,14 @@ export const ui = {
     'nav.cta': 'Briefing aanvragen',
     'nav.homeAria': 'AgentJetson home',
 
+    'blog.title': 'Blog — AgentJetson',
+    'blog.description': 'Inzichten over edge AI, de veiligheid van agenten en realtime-informatie voor openbare veiligheid.',
+    'blog.eyebrow': 'Inzichten',
+    'blog.heading': 'Vanaf de edge',
+    'blog.lede': 'Operationele lessen, diepgaande analyses van mogelijkheden en hoe realtime-informatie de uitkomsten voor agenten op straat verandert.',
+    'blog.back': '← Alle berichten',
+    'blog.empty': 'Nog geen berichten.',
+
     // Hero
     'hero.eyebrow': 'Soevereine AI voor het algemeen belang',
     'hero.title.1': 'Video legt het verleden vast.',
@@ -328,7 +360,7 @@ export const ui = {
     'edge.label': 'Edge AI',
     'edge.title': 'Intelligentie die meereist met de missie.',
     'edge.body':
-      'Agent Jetson draait op NVIDIA Jetson-hardware en geharde edge-nodes. Zo blijft detectie lokaal, met lage vertraging en onder uw controle — zelfs als het netwerk wegvalt.',
+      'Agent Jetson draait op NVIDIA Jetson-hardware en mil-grade geharde edge-nodes. Zo blijft detectie lokaal, met lage vertraging en onder controle, zelfs als het netwerk wegvalt.',
 
     // CTA / Contact
     'cta.label': 'Contact',
@@ -336,7 +368,7 @@ export const ui = {
     'cta.lede':
       'Vraag een besloten briefing aan. We stemmen Agent Jetson af op uw bestaande camera’s, beleid en operationele vereisten.',
     'cta.name': 'Naam',
-    'cta.namePlaceholder': 'Volledige naam',
+    'cta.namePlaceholder': 'Uw naam',
     'cta.email': 'E-mailadres',
     'cta.emailPlaceholder': 'u@organisatie.nl',
     'cta.org': 'Organisatie',
