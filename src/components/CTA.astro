@@ -46,6 +46,52 @@ const t = useTranslations(Astro.currentLocale);
   </div>
 </section>
 
+<script>
+  const form = document.getElementById('briefing-form') as HTMLFormElement | null;
+  const statusEl = document.getElementById('form-status');
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+
+  if (!form || !statusEl || !btn) {
+    // elements missing — do nothing
+  } else {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const data = Object.fromEntries(new FormData(form));
+
+      btn.disabled = true;
+      statusEl.hidden = true;
+      statusEl.className = 'status';
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        const json = await res.json();
+
+        statusEl.hidden = false;
+        if (json.success) {
+          statusEl.classList.add('success');
+          statusEl.textContent = json.message || 'Thank you. We’ll be in touch shortly.';
+          form.reset();
+        } else {
+          statusEl.classList.add('error');
+          statusEl.textContent = json.message || 'Something went wrong.';
+        }
+      } catch {
+        statusEl.hidden = false;
+        statusEl.classList.add('error');
+        statusEl.textContent = 'Network error. Please try again or email us directly.';
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  }
+</script>
+
 <style>
   .cta {
     border-top: 1px solid var(--border);
