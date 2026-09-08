@@ -47,7 +47,10 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
   // 1. Cookie
   const cookieLang = cookies.get('lang')?.value;
-  if (isValidLocale(cookieLang) && cookieLang !== defaultLocale) {
+  if (cookieLang === defaultLocale) {
+    // Clean up so future visits don’t carry a useless cookie
+    cookies.delete('lang', { path: '/' });
+  } else if (isValidLocale(cookieLang)) {
     return redirect(`/${cookieLang}/`, 302);
   }
 
