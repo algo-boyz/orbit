@@ -24,17 +24,64 @@ const links = [
       <img src={logo.src} alt="" width="32" height="32" class="mark" />
       <span class="name">AgentJetson</span>
     </a>
-    <nav class="nav">
+
+    <!-- Desktop nav -->
+    <nav class="nav desktop-nav" aria-label="Main">
       {links.map((l) => (
         <a href={l.href}>{l.label}</a>
       ))}
     </nav>
+
     <div class="actions">
       <LanguageSwitcher />
       <a href={`${homeHref}#contact`} class="cta">{t('nav.cta')}</a>
+
+      <!-- Mobile menu button -->
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        id="menu-toggle"
+      >
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
   </div>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav" id="mobile-nav" hidden>
+    {links.map((l) => (
+      <a href={l.href}>{l.label}</a>
+    ))}
+  </nav>
 </header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  if (toggle && mobileNav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      mobileNav.hidden = isOpen;
+      document.body.style.overflow = isOpen ? '' : 'hidden'; // optional: prevent scroll when open
+    });
+
+    // Close when a link is clicked
+    mobileNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileNav.hidden = true;
+        document.body.style.overflow = '';
+      });
+    });
+  }
+</script>
 
 <style>
   .header {
@@ -76,19 +123,20 @@ const links = [
     letter-spacing: -0.02em;
   }
 
-  .nav {
+  /* Desktop nav – hidden on mobile */
+  .desktop-nav {
     display: none;
     gap: 1.75rem;
   }
 
-  .nav a {
+  .desktop-nav a {
     color: var(--text-muted);
     font-size: 0.9rem;
     font-weight: 500;
     transition: color 0.15s;
   }
 
-  .nav a:hover {
+  .desktop-nav a:hover {
     color: var(--text);
   }
 
@@ -99,7 +147,7 @@ const links = [
   }
 
   .cta {
-    display: inline-flex;
+    display: none; /* hide CTA on very small screens if you want more space */
     align-items: center;
     padding: 0.55rem 1rem;
     border-radius: 999px;
@@ -115,9 +163,82 @@ const links = [
     box-shadow: 0 0 0 3px var(--accent-soft);
   }
 
+  /* Hamburger */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .menu-toggle .bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--text);
+    border-radius: 1px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  .menu-toggle[aria-expanded="true"] .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-toggle[aria-expanded="true"] .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle[aria-expanded="true"] .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Mobile nav panel */
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem 1.5rem 1.5rem;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mobile-nav[hidden] {
+    display: none;
+  }
+
+  .mobile-nav a {
+    padding: 0.85rem 0;
+    color: var(--text);
+    font-size: 1.05rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mobile-nav a:last-child {
+    border-bottom: none;
+  }
+
+  /* ≥ 768px: show desktop nav, hide hamburger + mobile nav */
   @media (min-width: 768px) {
-    .nav {
+    .desktop-nav {
       display: flex;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: none !important;
+    }
+
+    .cta {
+      display: inline-flex;
     }
   }
 </style>
