@@ -48,14 +48,17 @@ export const ui = {
     'feat.label': 'Capabilities',
     'feat.title': 'Built for the street, not the lab.',
     'feat.1.title': 'Real-time multi-modal detection',
+    'feat.1.tag': 'Detection',
     'feat.1.body':
-      'Persons, vehicles, plates, and objects of interest — analyzed continuously from live streams against authorized watchlists.',
-    'feat.2.title': 'Works with what you already have',
+      'Vehicles, plates, persons of interest. All analyzed continuously from live streams against authorized watchlists.',
+    'feat.2.title': 'Actionable real-time event streams',
+    'feat.2.tag': 'Sources',
     'feat.2.body':
-      'Fixed cameras, ALPR, dash cams, body-worn cameras, drones, and mobile sources become an active detection network.',
+      'Every control-plane action is evaluated the moment it happens. Fixed cameras, ALPR, dash cams, body-worn cameras, drones & mobile sources become an active detection network.',
     'feat.3.title': 'Edge-first, cloud-optional',
+    'feat.3.tag': 'Edge',
     'feat.3.body':
-      'Process where the data is generated. Keep sensitive video on-prem or at the edge; escalate only when policy allows.',
+      'Process data where it is generated. Keep sensitive video on-prem or at the edge. Escalate when policy demands.',
 
     // Edge
     'edge.label': 'Edge AI',
@@ -122,16 +125,19 @@ export const ui = {
       'Detecta, identifica, correlaciona y alerta en tiempo real para que los agentes sepan qué importa antes del contacto.',
 
     'feat.label': 'Capacidades',
-    'feat.title': 'Hecho para la calle, no para el laboratorio.',
+    'feat.title': 'Diseñado para la calle, no para el laboratorio.',
     'feat.1.title': 'Detección multimodal en tiempo real',
+    'feat.1.tag': 'Detección',
     'feat.1.body':
-      'Personas, vehículos, matrículas y objetos de interés — analizados de forma continua desde flujos en vivo contra listas autorizadas.',
-    'feat.2.title': 'Funciona con lo que ya tiene',
+      'Vehículos, matrículas, personas de interés. Todo se analiza continuamente a partir de transmisiones en directo, comparándolas con listas de vigilancia autorizadas.',
+    'feat.2.title': 'Flujos de eventos accionables en tiempo real',
+    'feat.2.tag': 'Fuentes',
     'feat.2.body':
-      'Cámaras fijas, ALPR, dashcams, bodycams, drones y fuentes móviles se convierten en una red de detección activa.',
-    'feat.3.title': 'Primero el borde, la nube opcional',
+      'Cada acción del plano de control se evalúa en el momento en que ocurre. Cámaras fijas, ALPR, cámaras de salpicadero, cámaras corporales, drones y fuentes móviles se convierten en una red de detección activa.',
+    'feat.3.title': 'Edge-first, nube opcional',
+    'feat.3.tag': 'Edge',
     'feat.3.body':
-      'Procese donde se genera el dato. Mantenga el vídeo sensible on-prem o en el borde; escale solo cuando la política lo permita.',
+      'Procese los datos allí donde se generan. Mantenga los vídeos sensibles en sus instalaciones o en el edge. Escale cuando las políticas lo requieran.',
 
     'edge.label': 'IA en el borde',
     'edge.title': 'Inteligencia que viaja con la misión.',
@@ -194,17 +200,20 @@ export const ui = {
     'pos.3.body':
       'Détecter, identifier, corréler et alerter en temps réel pour que les agents sachent ce qui compte avant le contact.',
 
-    'feat.label': 'Capacités',
+    'feat.label': 'Fonctionnalités',
     'feat.title': 'Conçu pour la rue, pas pour le laboratoire.',
     'feat.1.title': 'Détection multimodale en temps réel',
+    'feat.1.tag': 'Détection',
     'feat.1.body':
-      'Personnes, véhicules, plaques et objets d’intérêt — analysés en continu à partir de flux en direct contre des listes autorisées.',
-    'feat.2.title': 'Fonctionne avec votre existant',
+      'Véhicules, plaques d’immatriculation, personnes d’intérêt. Tout est analysé en continu à partir de flux en direct, en comparaison avec des listes de surveillance autorisées.',
+    'feat.2.title': 'Flux d’événements exploitables en temps réel',
+    'feat.2.tag': 'Sources',
     'feat.2.body':
-      'Caméras fixes, ALPR, dashcams, bodycams, drones et sources mobiles deviennent un réseau de détection actif.',
-    'feat.3.title': 'Le bord d’abord, le cloud en option',
+      'Chaque action du plan de contrôle est évaluée dès qu’elle se produit. Caméras fixes, ALPR, caméras embarquées, caméras-piétons, drones et sources mobiles deviennent un réseau de détection actif.',
+    'feat.3.title': 'Edge-first, cloud optionnel',
+    'feat.3.tag': 'Edge',
     'feat.3.body':
-      'Traitez là où les données sont générées. Gardez la vidéo sensible on-prem ou en bord ; n’escaladez que si la politique le permet.',
+      'Traitez les données là où elles sont générées. Conservez les vidéos sensibles sur site ou en périphérie. Déclenchez une remontée lorsque les politiques l’exigent.',
 
     'edge.label': 'IA de bord',
     'edge.title': 'Une intelligence qui voyage avec la mission.',
@@ -268,16 +277,19 @@ export const ui = {
       'Erkennen, identifizieren, korrelieren und in Echtzeit alarmieren, damit Beamte wissen, was zählt, bevor der Kontakt stattfindet.',
 
     'feat.label': 'Funktionen',
-    'feat.title': 'Für die Straße gebaut, nicht fürs Labor.',
-    'feat.1.title': 'Echtzeit multimodale Erkennung',
+    'feat.title': 'Für die Straße entwickelt, nicht fürs Labor.',
+    'feat.1.title': 'Multimodale Erkennung in Echtzeit',
+    'feat.1.tag': 'Erkennung',
     'feat.1.body':
-      'Personen, Fahrzeuge, Kennzeichen und relevante Objekte — kontinuierlich aus Live-Streams gegen autorisierte Listen analysiert.',
-    'feat.2.title': 'Funktioniert mit dem, was Sie haben',
+      'Fahrzeuge, Kennzeichen, relevante Personen. Alles wird kontinuierlich aus Live-Streams anhand autorisierter Fahndungslisten analysiert.',
+    'feat.2.title': 'Umsetzbare Ereignisströme in Echtzeit',
+    'feat.2.tag': 'Quellen',
     'feat.2.body':
-      'Festkameras, ALPR, Dashcams, Bodycams, Drohnen und mobile Quellen werden zu einem aktiven Erkennungsnetzwerk.',
-    'feat.3.title': 'Edge-first, Cloud optional',
+      'Jede Aktion auf der Steuerungsebene wird unmittelbar bei ihrem Auftreten ausgewertet. Fest installierte Kameras, ALPR, Dashcams, Bodycams, Drohnen und mobile Quellen werden zu einem aktiven Erkennungsnetzwerk.',
+    'feat.3.title': 'Edge-first, Cloud-optional',
+    'feat.3.tag': 'Edge',
     'feat.3.body':
-      'Verarbeiten Sie dort, wo die Daten entstehen. Halten Sie sensibles Video on-prem oder am Edge; eskalieren Sie nur, wenn die Richtlinie es erlaubt.',
+      'Verarbeiten Sie Daten dort, wo sie entstehen. Halten Sie sensible Videodaten lokal oder am Edge. Eskalieren Sie, wenn es die Richtlinien erfordern.',
 
     'edge.label': 'Edge-KI',
     'edge.title': 'Intelligenz, die mit der Mission reist.',
@@ -345,16 +357,19 @@ export const ui = {
 
     // Features
     'feat.label': 'Mogelijkheden',
-    'feat.title': 'Gebouwd voor de straat, niet het lab.',
-    'feat.1.title': 'Realtime multimodale detectie',
+    'feat.title': 'Ontwikkeld voor de straat, niet voor het lab.',
+    'feat.1.title': 'Multimodale detectie in realtime',
+    'feat.1.tag': 'Detectie',
     'feat.1.body':
-      'Personen, voertuigen, kentekens en interessante objecten — continu geanalyseerd vanuit live streams op basis van geautoriseerde controlelijsten.',
-    'feat.2.title': 'Werkt met uw bestaande apparatuur',
+      'Voertuigen, kentekens, personen van belang. Alles wordt continu geanalyseerd vanuit live videostreams en vergeleken met geautoriseerde watchlists.',
+    'feat.2.title': 'Direct bruikbare eventstreams in realtime',
+    'feat.2.tag': 'Bronnen',
     'feat.2.body':
-      'Vaste camera’s, ANPR, dashcams, bodycams, drones en mobiele bronnen worden een actief detectienetwerk.',
-    'feat.3.title': 'Edge-first, cloud-optioneel',
+      'Elke actie op het control plane wordt direct beoordeeld zodra deze plaatsvindt. Vaste camera’s, ALPR, dashcams, bodycams, drones en mobiele bronnen vormen samen een actief detectienetwerk.',
+    'feat.3.title': 'Edge-first, cloud optioneel',
+    'feat.3.tag': 'Edge',
     'feat.3.body':
-      'Verwerk data waar deze wordt gegenereerd. Bewaar gevoelige videobeelden lokaal of op de edge; escaleer alleen wanneer het beleid dit toestaat.',
+      'Verwerk data daar waar deze wordt gegenereerd. Houd gevoelige videobeelden lokaal of aan de edge. Schakel op wanneer beleid dit vereist.',
 
     // Edge
     'edge.label': 'Edge AI',

@@ -4,27 +4,151 @@ import { useTranslations } from '../i18n/ui';
 const t = useTranslations(Astro.currentLocale);
 
 const features = [
-  { title: t('feat.1.title'), body: t('feat.1.body') },
-  { title: t('feat.2.title'), body: t('feat.2.body') },
-  { title: t('feat.3.title'), body: t('feat.3.body') },
+  {
+    num: '01',
+    tag: t('feat.1.tag'),
+    title: t('feat.1.title'),
+    body: t('feat.1.body'),
+    gfx: 'detection',
+  },
+  {
+    num: '02',
+    tag: t('feat.2.tag'),
+    title: t('feat.2.title'),
+    body: t('feat.2.body'),
+    gfx: 'sources',
+  },
+  {
+    num: '03',
+    tag: t('feat.3.tag'),
+    title: t('feat.3.title'),
+    body: t('feat.3.body'),
+    gfx: 'edge',
+  },
 ];
 ---
 
 <section class="features" id="capabilities">
   <div class="inner">
-    <p class="section-label">{t('feat.label')}</p>
+    <div class="section-head">
+      <p class="section-label">{t('feat.label')}</p>
+      <span class="section-rule" aria-hidden="true"></span>
+    </div>
     <h2>{t('feat.title')}</h2>
-    <div class="grid">
+
+    <div class="panel bullet-grid">
       {features.map((f) => (
-        <article class="card">
-          <div class="icon" aria-hidden="true"></div>
-          <h3>{f.title}</h3>
-          <p>{f.body}</p>
+        <article class="bullet-cell">
+          <div class="cell-inner">
+            <div class="cell-meta">
+              <span class="cell-num">/{f.num}</span>
+              <span class="cell-tag">{f.tag}</span>
+            </div>
+
+            <div class="svgbox" aria-hidden="true">
+              {f.gfx === 'detection' && (
+                <svg viewBox="0 0 120 80" width="100%" height="100%" fill="none">
+                  <!-- tree / multi-hop detection graph -->
+                  <path d="M60 14 L24 42" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+                  <path d="M60 14 L60 42" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+                  <path d="M60 14 L96 42" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+                  <path d="M24 42 L14 66" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+                  <path d="M24 42 L34 66" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+                  <path d="M60 42 L60 66" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+                  <path d="M96 42 L86 66" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+                  <path d="M96 42 L106 66" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+                  <!-- active path -->
+                  <path d="M60 14 L24 42 L14 66" stroke="#22d3ee" stroke-width="1.4" stroke-linecap="round" />
+                  <circle cx="60" cy="14" r="3" fill="#22d3ee" />
+                  <circle cx="24" cy="42" r="2.5" fill="#22d3ee" />
+                  <circle cx="60" cy="42" r="2" fill="rgba(255,255,255,0.25)" />
+                  <circle cx="96" cy="42" r="2" fill="rgba(255,255,255,0.25)" />
+                  <circle cx="14" cy="66" r="3" fill="#22d3ee" />
+                  <circle cx="34" cy="66" r="1.8" fill="rgba(255,255,255,0.25)" />
+                  <circle cx="60" cy="66" r="1.8" fill="rgba(255,255,255,0.25)" />
+                  <circle cx="86" cy="66" r="1.8" fill="rgba(255,255,255,0.25)" />
+                  <circle cx="106" cy="66" r="1.8" fill="rgba(255,255,255,0.25)" />
+                  <!-- pulse on hit -->
+                  <circle cx="14" cy="66" r="6" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.4">
+                    <animate attributeName="r" from="3" to="10" dur="2s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" from="0.55" to="0" dur="2s" repeatCount="indefinite" />
+                  </circle>
+                </svg>
+              )}
+
+              {f.gfx === 'sources' && (
+                <svg viewBox="0 0 120 80" width="100%" height="100%" fill="none">
+                  <!-- streaming event lines -->
+                  <line x1="0" y1="24" x2="120" y2="24" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+                  <line x1="0" y1="40" x2="120" y2="40" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+                  <line x1="0" y1="56" x2="120" y2="56" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+                  <!-- moving dots = live sources -->
+                  <circle cx="0" cy="24" r="2.5" fill="#34d399">
+                    <animate attributeName="cx" from="-6" to="126" dur="2.8s" begin="0s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="0" cy="24" r="2.5" fill="#22d3ee">
+                    <animate attributeName="cx" from="-6" to="126" dur="2.8s" begin="1.2s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="0" cy="40" r="2.5" fill="#3b82f6">
+                    <animate attributeName="cx" from="-6" to="126" dur="2.8s" begin="0.6s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="0" cy="40" r="2.5" fill="#34d399">
+                    <animate attributeName="cx" from="-6" to="126" dur="2.8s" begin="2s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="0" cy="56" r="2.5" fill="#f59e0b">
+                    <animate attributeName="cx" from="-6" to="126" dur="2.8s" begin="1.6s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="0" cy="56" r="2.5" fill="#22d3ee">
+                    <animate attributeName="cx" from="-6" to="126" dur="2.8s" begin="0.3s" repeatCount="indefinite" />
+                  </circle>
+                  <!-- tick marks -->
+                  <line x1="30" y1="68" x2="30" y2="72" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+                  <line x1="60" y1="68" x2="60" y2="72" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+                  <line x1="90" y1="68" x2="90" y2="72" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+                </svg>
+              )}
+
+              {f.gfx === 'edge' && (
+                <svg viewBox="0 0 120 80" width="100%" height="100%" fill="none">
+                  <!-- edge node + local policy -->
+                  <rect x="8" y="18" width="28" height="22" rx="3" stroke="#3b82f6" stroke-width="1.2" fill="none" />
+                  <circle cx="16" cy="29" r="1.4" fill="#3b82f6" />
+                  <circle cx="22" cy="29" r="1.4" fill="#3b82f6" />
+                  <circle cx="28" cy="29" r="1.4" fill="#3b82f6" />
+                  <text x="10" y="52" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="6.5" fill="rgba(255,255,255,0.45)">edge</text>
+
+                  <!-- dashed link to decision -->
+                  <path d="M38 29 L58 29" stroke="#22d3ee" stroke-width="1" stroke-dasharray="3 2" />
+                  <circle cx="58" cy="29" r="2.2" fill="#22d3ee" />
+
+                  <!-- local decision box -->
+                  <rect x="66" y="16" width="46" height="28" rx="3" fill="rgba(18,23,34,0.9)" stroke="#22d3ee" stroke-width="1.2" />
+                  <text x="72" y="28" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="6.5" fill="#22d3ee">on-prem</text>
+                  <text x="72" y="38" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="6.5" fill="#22d3ee">policy</text>
+                  <circle cx="104" cy="20" r="3" fill="#34d399" />
+                  <circle cx="104" cy="20" r="5" stroke="#34d399" stroke-width="0.8" fill="none" opacity="0.45">
+                    <animate attributeName="r" from="3" to="8" dur="2.2s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" from="0.5" to="0" dur="2.2s" repeatCount="indefinite" />
+                  </circle>
+
+                  <!-- cloud optional (faded) -->
+                  <path d="M20 62 Q30 54 42 62 Q50 58 58 64 Q48 70 36 68 Q24 70 20 62 Z" stroke="rgba(255,255,255,0.18)" stroke-width="1" fill="none" />
+                  <text x="22" y="76" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="6" fill="rgba(255,255,255,0.3)">cloud optional</text>
+                </svg>
+              )}
+            </div>
+
+            <div class="cell-copy">
+              <h3>{f.title}</h3>
+              <p>{f.body}</p>
+            </div>
+          </div>
         </article>
       ))}
     </div>
   </div>
 </section>
+
 <style>
   .features {
     border-top: 1px solid var(--border);
@@ -36,73 +160,131 @@ const features = [
     padding: 4.5rem 1.5rem;
   }
 
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
   .section-label {
-    margin: 0 0 0.75rem;
+    margin: 0;
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--cyan);
+    white-space: nowrap;
+  }
+
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.12);
   }
 
   h2 {
-    margin: 0 0 1rem;
+    margin: 0 0 2rem;
     font-size: clamp(1.6rem, 3vw, 2.15rem);
   }
 
-  .intro {
-    margin: 0 0 2.75rem;
-    max-width: 40rem;
-    color: var(--text-muted);
-    font-size: 1.05rem;
-  }
-
-  .grid {
-    display: grid;
-    gap: 1.25rem;
-  }
-
-  .card {
-    padding: 1.5rem;
-    border-radius: var(--radius);
+  /* Linro-style panel grid */
+  .panel {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    transition: border-color 0.15s;
+    border-radius: var(--radius);
+    overflow: hidden;
   }
 
-  .card:hover {
-    border-color: rgba(59, 130, 246, 0.35);
+  .bullet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .icon {
-    width: 2rem;
-    height: 2rem;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--accent-soft), rgba(34, 211, 238, 0.12));
-    border: 1px solid rgba(59, 130, 246, 0.25);
+  .bullet-cell {
+    border-right: 1px solid var(--border);
   }
 
-  .card h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.05rem;
+  .bullet-cell:last-child {
+    border-right: none;
   }
 
-  .card p {
-    margin: 0;
+  .cell-inner {
+    padding: 1.15rem 1.25rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    height: 100%;
+  }
+
+  .cell-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .cell-num {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.68rem;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+  }
+
+  .cell-tag {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.68rem;
     color: var(--text-muted);
-    font-size: 0.92rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 
-  @media (min-width: 640px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
+  /* The animated SVG box */
+  .svgbox {
+    height: 4.25rem;
+    padding: 0.35rem 0.25rem;
+    border-radius: 8px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .svgbox svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .cell-copy h3 {
+    margin: 0 0 0.4rem;
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+    color: var(--text);
+  }
+
+  .cell-copy p {
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    text-wrap: pretty;
+  }
+
+  @media (max-width: 900px) {
+    .bullet-grid {
+      grid-template-columns: 1fr;
     }
-  }
 
-  @media (min-width: 960px) {
-    .grid {
-      grid-template-columns: repeat(3, 1fr);
+    .bullet-cell {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .bullet-cell:last-child {
+      border-bottom: none;
     }
   }
 </style>

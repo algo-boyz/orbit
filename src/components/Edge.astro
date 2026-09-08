@@ -5,6 +5,11 @@ const t = useTranslations(Astro.currentLocale);
 ---
 
 <section class="edge" id="edge">
+  <!-- Background image -->
+  <div class="edge-bg" aria-hidden="true"></div>
+  <!-- Optional dark overlay for text readability -->
+  <div class="edge-overlay" aria-hidden="true"></div>
+
   <div class="inner">
     <div class="copy">
       <p class="section-label">{t('edge.label')}</p>
@@ -13,13 +18,40 @@ const t = useTranslations(Astro.currentLocale);
     </div>
   </div>
 </section>
+
 <style>
   .edge {
+    position: relative;
     border-top: 1px solid var(--border);
-    background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);
+    overflow: hidden;
+    min-height: 650px;
+  }
+
+  .edge-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/jetson.png'); /* adjust path if needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
+
+  .edge-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(7, 9, 15, 0.75) 0%,
+      rgba(7, 9, 15, 0.55) 40%,
+      rgba(7, 9, 15, 0.8) 100%
+    );
+    z-index: 1;
   }
 
   .inner {
+    position: relative;
+    z-index: 2;
     max-width: var(--max);
     margin: 0 auto;
     padding: 4.5rem 1.5rem;
