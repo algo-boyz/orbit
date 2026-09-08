@@ -5,6 +5,22 @@ const t = useTranslations(Astro.currentLocale);
 ---
 
 <section class="hero">
+  <!-- Background video (hosted in public/videos/) -->
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    aria-hidden="true"
+  >
+    <source src="/highway-traffic.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Dark overlay for text readability -->
+  <div class="hero-overlay" aria-hidden="true"></div>
+
   <div class="inner">
     <p class="eyebrow">{t('hero.eyebrow')}</p>
     <h1>
@@ -20,6 +36,8 @@ const t = useTranslations(Astro.currentLocale);
     </div>
     <p class="mantra">{t('hero.mantra')}</p>
   </div>
+
+  <!-- Keep the original visual frame on the right (desktop) -->
   <div class="visual" aria-hidden="true">
     <div class="frame">
       <div class="scan"></div>
@@ -30,12 +48,42 @@ const t = useTranslations(Astro.currentLocale);
 
 <style>
   .hero {
+    position: relative;
     max-width: var(--max);
     margin: 0 auto;
     padding: 4.5rem 1.5rem 3.5rem;
     display: grid;
     gap: 3rem;
     align-items: center;
+    overflow: hidden;
+  }
+
+  /* Full-bleed background video */
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transform: scale(1.05); /* slight zoom so edges never show empty */
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      rgba(7, 9, 15, 0.82) 0%,
+      rgba(7, 9, 15, 0.55) 45%,
+      rgba(7, 9, 15, 0.7) 100%
+    );
+    z-index: 1;
+  }
+
+  .inner {
+    position: relative;
+    z-index: 2;
   }
 
   .eyebrow {
@@ -114,6 +162,8 @@ const t = useTranslations(Astro.currentLocale);
 
   .visual {
     display: none;
+    position: relative;
+    z-index: 2;
   }
 
   .frame {
