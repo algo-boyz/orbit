@@ -18,12 +18,7 @@ const pathWithoutLocale = Astro.url.pathname
     aria-label="Select language"
     onchange="
       const lang = this.value;
-      if (lang === 'en') {
-        // Expire the cookie so middleware no longer redirects away from /
-        document.cookie = 'lang=; path=/; max-age=0; SameSite=Lax';
-      } else {
-        document.cookie = 'lang=' + lang + '; path=/; max-age=31536000; SameSite=Lax';
-      }
+      document.cookie = 'lang=' + lang + '; path=/; max-age=31536000; SameSite=Lax';
       window.location.href = this.options[this.selectedIndex].dataset.href;
     "
   >

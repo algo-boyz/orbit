@@ -45,16 +45,20 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return next();
   }
 
-  // 1. Cookie
+  // 1. Cookie (explicit user choice – wins over browser/geo)
   const cookieLang = cookies.get('lang')?.value;
-  if (cookieLang === defaultLocale) {
-    // Clean up so future visits don’t carry a useless cookie
-    cookies.delete('lang', { path: '/' });
-  } else if (isValidLocale(cookieLang)) {
+  if (isValidLocale(cookieLang)) {
+    if (cookieLang === defaultLocale) {
+      // User explicitly chose English → stay on /
+      // (optional: you can leave the cookie or delete it; keeping it is clearer)
+      return next();
+    }
+    // Non-default → redirect
     return redirect(`/${cookieLang}/`, 302);
   }
 
   // 2. Browser preference (Accept-Language via Astro)
+  // ... only runs when there is NO valid lang cookie
   if (preferredLocale && isValidLocale(preferredLocale) && preferredLocale !== defaultLocale) {
     cookies.set('lang', preferredLocale, {
       path: '/',
@@ -64,7 +68,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
     });
     return redirect(`/${preferredLocale}/`, 302);
   }
-
+  
   // 3. Cloudflare geo fallback
   const country =
     request.headers.get('cf-ipcountry') ||
