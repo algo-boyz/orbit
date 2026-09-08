@@ -1,4 +1,6 @@
 import type { APIRoute } from 'astro';
+// @ts-expect-error Cloudflare Workers runtime module
+import { env } from 'cloudflare:workers';
 
 export const prerender = false;
 
@@ -23,12 +25,7 @@ const json = (data: unknown, status = 200) =>
 
 export const OPTIONS: APIRoute = () => json(null, 204);
 
-export const POST: APIRoute = async ({ request, locals }) => {
-  // Env vars from Cloudflare (Pages → Settings → Variables and secrets)
-  const env = (locals as any).runtime?.env ?? (locals as any).env ?? {};
-  // Fallback for newer cloudflare:workers style if you prefer:
-  // import { env } from 'cloudflare:workers';
-
+export const POST: APIRoute = async ({ request }) => {
   if (!env.RESEND_API_KEY || !env.CONTACT_TO || !env.CONTACT_FROM) {
     console.error('Missing RESEND_API_KEY, CONTACT_TO, or CONTACT_FROM');
     return json({ success: false, message: 'Server configuration error.' }, 500);

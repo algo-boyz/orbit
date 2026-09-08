@@ -1,0 +1,7 @@
+name = "orbit"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Optional but useful for local/preview
+[vars]
+# Don't put secrets here — use Cloudflare dashboard / `wrangler secret`
