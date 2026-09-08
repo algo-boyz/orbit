@@ -4,6 +4,10 @@ title: "Agent Neer: Hoe Real-Time Edge AI de Uitkomst in Kusel had kunnen verand
 
 description: "Het telde elke seconde toen twee politieagenten werden vermoord tijdens een routineuze verkeerscontrole op het Duitse platteland. De edge-intelligentie van Agent Jetson had de eerste schoten kunnen detecteren, direct een 'agent neer' melding kunnen versturen en voertuigbeschrijving en kenteken kunnen koppelen voordat de daders zelfs konden ontsnappen."
 
+heroImage: ../../assets/blog/kusel.png
+
+heroImageAlt: "Flowers and candles stand in Ulmet, near Kusel, Germany (Sebastian Gollnow, dpa/AP)"
+
 pubDate: 2026-09-07
 
 author: "AgentJetson Team"

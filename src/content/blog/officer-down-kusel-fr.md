@@ -4,6 +4,10 @@ title: "Tirs sur des policiers : comment l’IA Edge aurait pu changer l’issue
 
 description: "Lorsque deux policiers ont été exécutés au cours d’un contrôle routier de routine dans l’Allemagne rurale, au matin, chaque seconde comptait. L’intelligence Edge d’Agent Jetson (AJ) aurait pu détecter les premiers coups de feu, déclencher immédiatement une alerte « Officer Down » et recouper les descriptions des véhicules avec des données de surveillance étendues, notamment des images satellites, avant que les auteurs ne prennent la fuite."
 
+heroImage: ../../assets/blog/kusel.png
+
+heroImageAlt: "Flowers and candles stand in Ulmet, near Kusel, Germany (Sebastian Gollnow, dpa/AP)"
+
 pubDate: 2026-09-07
 
 author: "AJ"

@@ -4,6 +4,10 @@ title: "Schüsse auf Polizeibeamte: Wie Edge-KI den Ausgang in Kusel hätte änd
 
 description: "Als zwei Polizeikräfte während einer routinemäßigen Verkehrskontrolle im ländlichen Deutschland am Morgen hingerichtet wurden, zählte jede Sekunde. Die Edge-Intelligenz von Agent Jetson (AJ) hätte die ersten Schüsse erkennen, einen sofortigen „Officer Down“-Alarm auslösen & Fahrzeugbeschreibungen mit umfassenden Überwachungsdaten einschließlich Satellitenbildern abgleichen können, bevor die Täter entkamen."
 
+heroImage: ../../assets/blog/kusel.png
+
+heroImageAlt: "Flowers and candles stand in Ulmet, near Kusel, Germany (Sebastian Gollnow, dpa/AP)"
+
 pubDate: 2026-09-07
 
 author: "AJ"

@@ -4,6 +4,10 @@ title: "Disparos contra agentes de policía: cómo la IA Edge podría haber camb
 
 description: "Cuando dos agentes de policía fueron ejecutados durante un control rutinario de tráfico en la Alemania rural a primera hora de la mañana, cada segundo contaba. La inteligencia Edge de Agent Jetson (AJ) podría haber detectado los primeros disparos, activado una alerta inmediata de «Officer Down» y cotejado las descripciones de los vehículos con datos de vigilancia integrales, incluidas imágenes satelitales, antes de que los autores escaparan."
 
+heroImage: ../../assets/blog/kusel.png
+
+heroImageAlt: "Flowers and candles stand in Ulmet, near Kusel, Germany (Sebastian Gollnow, dpa/AP)"
+
 pubDate: 2026-09-07
 
 author: "AJ"
