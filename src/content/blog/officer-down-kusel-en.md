@@ -2,7 +2,7 @@
 
 title: "Officer Down: How Real-Time Edge AI Could Have Changed the Outcome in Kusel"
 
-description: "When two police officers were executed during a routine traffic stop in rural Germany, seconds mattered. Agent Jetson’s edge intelligence could have detected the first shots, issued an immediate officer-down alert, & correlated vehicle descriptions with wider surveillance including satellite imagery before the killers escaped."
+description: "When two police officers were executed during a routine traffic stop in rural Germany, seconds mattered. Agent Jetson’s edge intelligence could have detected the first shots, issued an immediate officer-down alert & correlated vehicle descriptions with wider surveillance including satellite imagery before the killers escaped."
 
 heroImage: ../../assets/blog/kusel.png
 
@@ -28,7 +28,7 @@ A regional court in Kaiserslautern later sentenced the shooter to life imprisonm
 
 ## The gap between detection & response
 
-Body- & dash-camera video almost certainly recorded the critical first seconds. Yet those recordings only became evidence after the fact. There was no automated, real-time system watching the live feed for the acoustic & visual signatures of gunfire, no immediate “officer down” broadcast to nearby units, & no automated correlation of the vehicle’s type, colour & partial plate with wider camera networks or available satellite passes.
+Body- & dash-camera video almost certainly recorded the critical first seconds. Yet those recordings only became evidence after the fact. There was no automated, real-time system watching the live feed for the acoustic & visual signatures of gunfire, no immediate “officer down” broadcast to nearby units & no automated correlation of the vehicle’s type, colour & partial plate with wider camera networks or available satellite passes.
 
 In those decisive moments the only alert was a human voice over the radio — if it was heard & acted upon in time.
 
@@ -50,9 +50,9 @@ All detection runs on hardened edge hardware (NVIDIA Jetson-class or equivalent)
 
 ## Seconds that save lives
 
-The male officer’s distress call proved that a human voice could still be raised. An automated system would not have needed that voice. It would have recognised the first shotgun blast, confirmed the officer’s posture & the vehicle parameters, & broadcast the alert while the second shot was still being fired.
+The male officer’s distress call proved that a human voice could still be raised. An automated system would not have needed that voice. It would have recognised the first shotgun blast, confirmed the officer’s posture & the vehicle parameters & broadcast the alert while the second shot was still being fired.
 
-In a rural night stop those seconds determine whether backup arrives in time to prevent a second murder, whether the vehicle description is already circulating, & whether the killers’ head start is measured in minutes instead of hours.
+In a rural night stop those seconds determine whether backup arrives in time to prevent a second murder, whether the vehicle description is already circulating & whether the killers’ head start is measured in minutes instead of hours.
 
 Agent Jetson does not replace the officer’s judgment or courage. It ensures that the moment an encounter turns lethal, the rest of the force already knows — & already has the data needed to respond.
 

@@ -81,7 +81,26 @@ export const ui = {
     'cta.messagePlaceholder': 'Brief context, cameras in use, timeline…',
     'cta.submit': 'Request briefing',
 
+        // Investor materials
+    'investor.label': 'Investors',
+    'investor.title': 'Request investor materials',
+    'investor.lede':
+      'Tell us a little about yourself. We’ll review and send a secure link to the materials if there’s a fit.',
+    'investor.name': 'Name',
+    'investor.namePlaceholder': 'Full name',
+    'investor.email': 'Email',
+    'investor.emailPlaceholder': 'you@firm.com',
+    'investor.org': 'Firm / organization',
+    'investor.orgPlaceholder': 'Fund, family office, or company',
+    'investor.role': 'Role',
+    'investor.rolePlaceholder': 'Partner, associate, scout…',
+    'investor.message': 'Note (optional)',
+    'investor.messagePlaceholder': 'Stage of interest, intro context, or questions…',
+    'investor.submit': 'Request materials',
+    'investor.note': 'Or email',
+
     // Footer
+    'footer.investors': 'Investors',
     'footer.tagline': 'Intelligence at the edge of every encounter.',
     'footer.rights': 'Defense-grade. Human-governed. Sovereign.',
   },
@@ -158,6 +177,25 @@ export const ui = {
     'cta.messagePlaceholder': 'Contexto breve, cámaras en uso, plazos…',
     'cta.submit': 'Solicitar briefing',
 
+        // Investor materials
+    'investor.label': 'Inversores',
+    'investor.title': 'Solicitar materiales para inversores',
+    'investor.lede':
+      'Cuéntenos un poco sobre usted. Revisaremos y enviaremos un enlace seguro a los materiales si hay encaje.',
+    'investor.name': 'Nombre',
+    'investor.namePlaceholder': 'Nombre completo',
+    'investor.email': 'Correo',
+    'investor.emailPlaceholder': 'usted@fondo.com',
+    'investor.org': 'Firma / organización',
+    'investor.orgPlaceholder': 'Fondo, family office o empresa',
+    'investor.role': 'Cargo',
+    'investor.rolePlaceholder': 'Socio, asociado, scout…',
+    'investor.message': 'Nota (opcional)',
+    'investor.messagePlaceholder': 'Etapa de interés, contexto de introducción o preguntas…',
+    'investor.submit': 'Solicitar materiales',
+    'investor.note': 'O escriba a',
+
+    'footer.investors': 'Inversores',
     'footer.tagline': 'Inteligencia en el borde de cada encuentro.',
     'footer.rights': 'Grado defensa. Gobernado por humanos. Soberano.',
   },
@@ -234,6 +272,25 @@ export const ui = {
     'cta.messagePlaceholder': 'Contexte bref, caméras utilisées, délais…',
     'cta.submit': 'Demander un briefing',
 
+        // Investor materials
+    'investor.label': 'Investisseurs',
+    'investor.title': 'Demander les documents investisseurs',
+    'investor.lede':
+      'Parlez-nous un peu de vous. Nous examinerons et enverrons un lien sécurisé vers les documents s’il y a une adéquation.',
+    'investor.name': 'Nom',
+    'investor.namePlaceholder': 'Nom complet',
+    'investor.email': 'E-mail',
+    'investor.emailPlaceholder': 'vous@fonds.com',
+    'investor.org': 'Fonds / organisation',
+    'investor.orgPlaceholder': 'Fonds, family office ou entreprise',
+    'investor.role': 'Fonction',
+    'investor.rolePlaceholder': 'Associé, analyste, scout…',
+    'investor.message': 'Note (optionnel)',
+    'investor.messagePlaceholder': 'Stade d’intérêt, contexte d’intro ou questions…',
+    'investor.submit': 'Demander les documents',
+    'investor.note': 'Ou écrivez à',
+
+    'footer.investors': 'Investisseurs',
     'footer.tagline': 'L’intelligence au bord de chaque rencontre.',
     'footer.rights': 'Niveau défense. Gouverné par l’humain. Souverain.',
   },
@@ -310,6 +367,25 @@ export const ui = {
     'cta.messagePlaceholder': 'Kurzer Kontext, genutzte Kameras, Zeitplan…',
     'cta.submit': 'Briefing anfordern',
 
+        // Investor materials
+    'investor.label': 'Investoren',
+    'investor.title': 'Investorenunterlagen anfordern',
+    'investor.lede':
+      'Erzählen Sie uns kurz von sich. Wir prüfen und senden bei Passung einen sicheren Link zu den Unterlagen.',
+    'investor.name': 'Name',
+    'investor.namePlaceholder': 'Vollständiger Name',
+    'investor.email': 'E-Mail',
+    'investor.emailPlaceholder': 'sie@fonds.com',
+    'investor.org': 'Fonds / Organisation',
+    'investor.orgPlaceholder': 'Fonds, Family Office oder Unternehmen',
+    'investor.role': 'Rolle',
+    'investor.rolePlaceholder': 'Partner, Associate, Scout…',
+    'investor.message': 'Notiz (optional)',
+    'investor.messagePlaceholder': 'Interessensphase, Intro-Kontext oder Fragen…',
+    'investor.submit': 'Unterlagen anfordern',
+    'investor.note': 'Oder schreiben Sie an',
+
+    'footer.investors': 'Investoren',
     'footer.tagline': 'Intelligenz am Rand jeder Begegnung.',
     'footer.rights': 'Defense-Grade. Menschlich gesteuert. Souverän.',
   },
@@ -392,7 +468,26 @@ export const ui = {
     'cta.messagePlaceholder': 'Korte context, gebruikte camera’s, tijdslijn…',
     'cta.submit': 'Briefing aanvragen',
 
+
+    // Investor materials
+    'investor.label': 'Investeerders',
+    'investor.title': 'Investeerdersmateriaal aanvragen',
+    'investor.lede':
+      'Vertel ons kort over uzelf. We bekijken het en sturen bij een match een beveiligde link naar het materiaal.',
+    'investor.name': 'Naam',
+    'investor.namePlaceholder': 'Volledige naam',
+    'investor.email': 'E-mailadres',
+    'investor.emailPlaceholder': 'u@fonds.com',
+    'investor.org': 'Fonds / organisatie',
+    'investor.orgPlaceholder': 'Fonds, family office of bedrijf',
+    'investor.role': 'Rol',
+    'investor.rolePlaceholder': 'Partner, associate, scout…',
+    'investor.message': 'Opmerking (optioneel)',
+    'investor.messagePlaceholder': 'Fase van interesse, introductiecontext of vragen…',
+    'investor.submit': 'Materiaal aanvragen',
+    'investor.note': 'Of mail naar',
     // Footer
+    'footer.investors': 'Investeerders',
     'footer.tagline': 'Intelligentie op de plek van elke ontmoeting.',
     'footer.rights': 'Defensiekwaliteit. Menselijk beheer. Soeverein.',
   }

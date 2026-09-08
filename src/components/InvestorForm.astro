@@ -1,0 +1,267 @@
+---
+import { useTranslations } from '../i18n/ui';
+
+const t = useTranslations(Astro.currentLocale);
+---
+
+<section class="investor" id="investor">
+  <div class="inner">
+    <p class="section-label">{t('investor.label')}</p>
+    <h1>{t('investor.title')}</h1>
+    <p class="lede">{t('investor.lede')}</p>
+
+    <form class="form" id="investor-form" novalidate>
+      <!-- Honeypot — leave empty; bots fill it, humans don't -->
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+
+      <div class="row">
+        <label>
+          <span>{t('investor.name')}</span>
+          <input type="text" name="name" required autocomplete="name" placeholder={t('investor.namePlaceholder')} />
+        </label>
+        <label>
+          <span>{t('investor.email')}</span>
+          <input type="email" name="email" required autocomplete="email" placeholder={t('investor.emailPlaceholder')} />
+        </label>
+      </div>
+
+      <div class="row">
+        <label>
+          <span>{t('investor.org')}</span>
+          <input type="text" name="organization" autocomplete="organization" placeholder={t('investor.orgPlaceholder')} />
+        </label>
+        <label>
+          <span>{t('investor.role')}</span>
+          <input type="text" name="role" autocomplete="organization-title" placeholder={t('investor.rolePlaceholder')} />
+        </label>
+      </div>
+
+      <label>
+        <span>{t('investor.message')}</span>
+        <textarea name="message" rows="3" placeholder={t('investor.messagePlaceholder')}></textarea>
+      </label>
+
+      <button type="submit" class="btn" id="investor-submit">
+        {t('investor.submit')}
+      </button>
+
+      <p class="status" id="investor-status" role="status" aria-live="polite" hidden></p>
+    </form>
+
+    <p class="note">
+      {t('investor.note')}
+      <a href="mailto:relations@agentjetson.ai">relations@agentjetson.ai</a>
+    </p>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('investor-form') as HTMLFormElement | null;
+  const statusEl = document.getElementById('investor-status');
+  const btn = document.getElementById('investor-submit') as HTMLButtonElement | null;
+
+  if (form && statusEl && btn) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const data = Object.fromEntries(new FormData(form));
+
+      btn.disabled = true;
+      statusEl.hidden = true;
+      statusEl.className = 'status';
+
+      try {
+        const res = await fetch('/api/investor', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        const json = await res.json();
+
+        statusEl.hidden = false;
+        if (json.success) {
+          statusEl.classList.add('success');
+          statusEl.textContent = json.message || 'Thank you. We’ll review and send materials shortly.';
+          form.reset();
+        } else {
+          statusEl.classList.add('error');
+          statusEl.textContent = json.message || 'Something went wrong.';
+        }
+      } catch {
+        statusEl.hidden = false;
+        statusEl.classList.add('error');
+        statusEl.textContent = 'Network error. Please try again or email relations@agentjetson.ai.';
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  }
+</script>
+
+<style>
+  .investor {
+    border-top: 1px solid var(--border);
+  }
+
+  .inner {
+    max-width: 36rem;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem;
+  }
+
+  .section-label {
+    margin: 0 0 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    text-align: center;
+  }
+
+  .lede {
+    margin: 0 auto 2rem;
+    color: var(--text-muted);
+    text-align: center;
+    font-size: 1.05rem;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .row {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 540px) {
+    .row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  label span {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-strong);
+    background: var(--bg-card);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--text-dim);
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 4.5rem;
+  }
+
+  .hp {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.35rem;
+    padding: 0.85rem 1.6rem;
+    border: none;
+    border-radius: 999px;
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s, box-shadow 0.15s, opacity 0.15s;
+  }
+
+  .btn:hover:not(:disabled) {
+    background: #2563eb;
+    box-shadow: 0 0 28px var(--accent-glow);
+  }
+
+  .btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .status {
+    margin: 0.5rem 0 0;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .status.success {
+    background: rgba(52, 211, 153, 0.12);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    color: #6ee7b7;
+  }
+
+  .status.error {
+    background: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    color: #fca5a5;
+  }
+
+  .note {
+    margin: 1.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    text-align: center;
+  }
+
+  .note a {
+    color: var(--text-muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .note a:hover {
+    color: var(--text);
+  }
+</style>

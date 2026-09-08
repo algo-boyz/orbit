@@ -6,19 +6,23 @@ const t = useTranslations(Astro.currentLocale);
 const locale = Astro.currentLocale ?? 'en';
 
 const homeHref = locale === 'en' ? '/' : `/${locale}/`;
+const investorsHref = locale === 'en' ? '/investors' : `/${locale}/investors`;
 const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
   <div class="inner">
     <div class="brand">
-    <a href={homeHref} class="logo" aria-label={t('nav.homeAria')}>
-      <img src={logo.src} alt="" width="32" height="32" class="mark" />
-    </a>
+      <a href={homeHref} class="logo" aria-label={t('nav.homeAria')}>
+        <img src={logo.src} alt="" width="32" height="32" class="mark" />
+      </a>
     </div>
     <div class="meta">
       <p>© {year} AgentJetson.ai</p>
       <p>{t('footer.rights')}</p>
+      <p class="links">
+        <a href={investorsHref}>{t('footer.investors')}</a>
+      </p>
     </div>
   </div>
 </footer>
@@ -76,6 +80,17 @@ const year = new Date().getFullYear();
 
   .meta p {
     margin: 0.15rem 0;
+  }
+
+  .links a {
+    color: var(--text-muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-size: 0.8rem;
+  }
+
+  .links a:hover {
+    color: var(--text);
   }
 
   @media (min-width: 640px) {
