@@ -1,0 +1,96 @@
+---
+import { useTranslations } from '../i18n/ui';
+
+const t = useTranslations(Astro.currentLocale);
+---
+
+<section class="demo" id="demo">
+  <div class="inner">
+    <div class="section-head">
+      <p class="section-label">{t('demo.label')}</p>
+      <span class="section-rule" aria-hidden="true"></span>
+    </div>
+    <h2>{t('demo.title')}</h2>
+    <p class="lede">{t('demo.body')}</p>
+
+    <div class="video-frame">
+      <video
+        class="demo-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        controls
+      >
+        <source src="/object-detection.webm" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+<style>
+  .demo {
+    border-top: 1px solid var(--border);
+  }
+
+  .inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-label {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    white-space: nowrap;
+  }
+
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.6rem, 3vw, 2.15rem);
+  }
+
+  .lede {
+    margin: 0 0 2rem;
+    max-width: 40rem;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+  }
+
+  .video-frame {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.5);
+  }
+
+  .demo-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    background: #000;
+  }
+</style>

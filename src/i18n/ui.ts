@@ -60,6 +60,12 @@ export const ui = {
     'feat.3.body':
       'Process data where it is generated. Keep sensitive video on-prem or at the edge. Escalate when policy demands.',
 
+    // Demo
+    'demo.label': 'Demo',
+    'demo.title': 'Object detection in action.',
+    'demo.body':
+      'Watch Agent Jetson identify vehicles, plates, and persons of interest from live video — in real time, at the edge.',
+
     // Edge
     'edge.label': 'Edge AI',
     'edge.title': 'Intelligence that travels with the mission.',
@@ -81,7 +87,7 @@ export const ui = {
     'cta.messagePlaceholder': 'Brief context, cameras in use, timeline…',
     'cta.submit': 'Request briefing',
 
-        // Investor materials
+    // Investor materials
     'investor.label': 'Investors',
     'investor.title': 'Request investor materials',
     'investor.lede':
@@ -157,6 +163,12 @@ export const ui = {
     'feat.3.tag': 'Edge',
     'feat.3.body':
       'Procese los datos allí donde se generan. Mantenga los vídeos sensibles en sus instalaciones o en el edge. Escale cuando las políticas lo requieran.',
+
+    // Demo
+    'demo.label': 'Demo',
+    'demo.title': 'Detección de objetos en acción.',
+    'demo.body':
+      'Observa cómo Agent Jetson identifica vehículos, matrículas y personas de interés a partir de vídeo en directo — en tiempo real, en el edge.',
 
     'edge.label': 'IA en el borde',
     'edge.title': 'Inteligencia que viaja con la misión.',
@@ -253,6 +265,12 @@ export const ui = {
     'feat.3.body':
       'Traitez les données là où elles sont générées. Conservez les vidéos sensibles sur site ou en périphérie. Déclenchez une remontée lorsque les politiques l’exigent.',
 
+    // Demo
+    'demo.label': 'Démo',
+    'demo.title': 'Détection d\'objets en action.',
+    'demo.body':
+      'Regardez Agent Jetson identifier véhicules, plaques et personnes d\'intérêt à partir de flux vidéo en direct — en temps réel, en périphérie.',
+
     'edge.label': 'IA de bord',
     'edge.title': 'Une intelligence qui voyage avec la mission.',
     'edge.body':
@@ -347,6 +365,12 @@ export const ui = {
     'feat.3.tag': 'Edge',
     'feat.3.body':
       'Verarbeiten Sie Daten dort, wo sie entstehen. Halten Sie sensible Videodaten lokal oder am Edge. Eskalieren Sie, wenn es die Richtlinien erfordern.',
+
+    // Demo
+    'demo.label': 'Demo',
+    'demo.title': 'Objekterkennung in Aktion.',
+    'demo.body':
+      'Sehen Sie, wie Agent Jetson Fahrzeuge, Kennzeichen und Personen von Interesse aus Live-Video erkennt — in Echtzeit, am Edge.',
 
     'edge.label': 'Edge-KI',
     'edge.title': 'Intelligenz, die mit der Mission reist.',
@@ -446,6 +470,12 @@ export const ui = {
     'feat.3.tag': 'Edge',
     'feat.3.body':
       'Verwerk data daar waar deze wordt gegenereerd. Houd gevoelige videobeelden lokaal of aan de edge. Schakel op wanneer beleid dit vereist.',
+
+    // Demo
+    'demo.label': 'Demo',
+    'demo.title': 'Objectdetectie in actie.',
+    'demo.body':
+      'Bekijk hoe Agent Jetson voertuigen, kentekens en personen van belang herkent uit live video — in real time, aan de edge.',
 
     // Edge
     'edge.label': 'Edge AI',
