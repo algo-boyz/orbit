@@ -62,8 +62,11 @@ export const ui = {
 
     // Demo
     'demo.label': 'Demo',
-    'demo.title': 'Object detection in action.',
-    'demo.body':
+    'demo1.title': 'Traffic analysis',
+    'demo1.body':
+      'Watch Agent Jetson identify vehicles, plates, and persons of interest from live video — in real time, at the edge.',
+    'demo2.title': 'Object detection in action',
+    'demo2.body':
       'Watch Agent Jetson identify vehicles, plates, and persons of interest from live video — in real time, at the edge.',
 
     // Edge
@@ -166,8 +169,11 @@ export const ui = {
 
     // Demo
     'demo.label': 'Demo',
-    'demo.title': 'Detección de objetos en acción.',
-    'demo.body':
+    'demo1.title': 'Análisis de tráfico',
+    'demo1.body':
+      'Observa cómo Agent Jetson identifica vehículos, matrículas y personas de interés a partir de vídeo en directo — en tiempo real, en el edge.',
+    'demo2.title': 'Detección de objetos en acción',
+    'demo2.body':
       'Observa cómo Agent Jetson identifica vehículos, matrículas y personas de interés a partir de vídeo en directo — en tiempo real, en el edge.',
 
     'edge.label': 'IA en el borde',
@@ -267,8 +273,11 @@ export const ui = {
 
     // Demo
     'demo.label': 'Démo',
-    'demo.title': 'Détection d\'objets en action.',
-    'demo.body':
+    'demo1.title': 'Analyse du trafic',
+    'demo1.body':
+      'Regardez Agent Jetson identifier véhicules, plaques et personnes d\'intérêt à partir de flux vidéo en direct — en temps réel, en périphérie.',
+    'demo2.title': 'Détection d\'objets en action',
+    'demo2.body':
       'Regardez Agent Jetson identifier véhicules, plaques et personnes d\'intérêt à partir de flux vidéo en direct — en temps réel, en périphérie.',
 
     'edge.label': 'IA de bord',
@@ -368,8 +377,11 @@ export const ui = {
 
     // Demo
     'demo.label': 'Demo',
-    'demo.title': 'Objekterkennung in Aktion.',
-    'demo.body':
+    'demo1.title': 'Lagebild',
+    'demo1.body':
+      'Sehen Sie, wie Agent Jetson Fahrzeuge, Kennzeichen und Personen von Interesse aus Live-Video erkennt — in Echtzeit, am Edge.',
+    'demo2.title': 'Objekterkennung in Aktion',
+    'demo2.body':
       'Sehen Sie, wie Agent Jetson Fahrzeuge, Kennzeichen und Personen von Interesse aus Live-Video erkennt — in Echtzeit, am Edge.',
 
     'edge.label': 'Edge-KI',
@@ -473,8 +485,11 @@ export const ui = {
 
     // Demo
     'demo.label': 'Demo',
-    'demo.title': 'Objectdetectie in actie.',
-    'demo.body':
+    'demo1.title': 'Verkeersanalyse',
+    'demo1.body':
+      'Bekijk hoe Agent Jetson voertuigen, kentekens en personen van belang herkent uit live video — in real time, aan de edge.',
+    'demo2.title': 'Objectdetectie in actie',
+    'demo2.body':
       'Bekijk hoe Agent Jetson voertuigen, kentekens en personen van belang herkent uit live video — in real time, aan de edge.',
 
     // Edge

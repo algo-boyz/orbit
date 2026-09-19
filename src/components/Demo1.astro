@@ -10,8 +10,8 @@ const t = useTranslations(Astro.currentLocale);
       <p class="section-label">{t('demo.label')}</p>
       <span class="section-rule" aria-hidden="true"></span>
     </div>
-    <h2>{t('demo.title')}</h2>
-    <p class="lede">{t('demo.body')}</p>
+    <h2>{t('demo1.title')}</h2>
+    <p class="lede">{t('demo1.body')}</p>
 
     <div class="video-frame">
       <video
@@ -38,21 +38,7 @@ const t = useTranslations(Astro.currentLocale);
         preload="metadata"
         controls
       >
-        <source src="/blur.webm" type="video/webm" />
-      </video>
-    </div>
-
-    <div class="video-frame">
-      <video
-        class="demo-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        controls
-      >
-        <source src="/distance.webm" type="video/webm" />
+        <source src="/traffic_analysis.webm" type="video/webm" />
       </video>
     </div>
 
@@ -67,20 +53,6 @@ const t = useTranslations(Astro.currentLocale);
         controls
       >
         <source src="/speed.webm" type="video/webm" />
-      </video>
-    </div>
-
-    <div class="video-frame">
-      <video
-        class="demo-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        controls
-      >
-        <source src="/tracking.webm" type="video/webm" />
       </video>
     </div>
   </div>
