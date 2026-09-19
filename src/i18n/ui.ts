@@ -108,6 +108,9 @@ export const ui = {
     'investor.submit': 'Request materials',
     'investor.note': 'Or email',
 
+    // Partners
+    'partners.label': 'Trusted by',
+    
     // Footer
     'footer.investors': 'Investors',
     'footer.tagline': 'Intelligence at the edge of every encounter.',
@@ -212,7 +215,9 @@ export const ui = {
     'investor.messagePlaceholder': 'Etapa de interés, contexto de introducción o preguntas…',
     'investor.submit': 'Solicitar materiales',
     'investor.note': 'O escriba a',
-
+    
+    'partners.label': 'Con la confianza de',
+    
     'footer.investors': 'Inversores',
     'footer.tagline': 'Inteligencia en el borde de cada encuentro.',
     'footer.rights': 'Grado defensa. Gobernado por humanos. Soberano.',
@@ -317,6 +322,8 @@ export const ui = {
     'investor.submit': 'Demander les documents',
     'investor.note': 'Ou écrivez à',
 
+    'partners.label': 'Ils nous font confiance',
+
     'footer.investors': 'Investisseurs',
     'footer.tagline': 'L’intelligence au bord de chaque rencontre.',
     'footer.rights': 'Niveau défense. Gouverné par l’humain. Souverain.',
@@ -420,6 +427,8 @@ export const ui = {
     'investor.messagePlaceholder': 'Interessensphase, Intro-Kontext oder Fragen…',
     'investor.submit': 'Unterlagen anfordern',
     'investor.note': 'Oder schreiben Sie an',
+
+    'partners.label': 'Partners',
 
     'footer.investors': 'Investoren',
     'footer.tagline': 'Intelligenz am Rand jeder Begegnung.',
@@ -531,6 +540,9 @@ export const ui = {
     'investor.messagePlaceholder': 'Fase van interesse, introductiecontext of vragen…',
     'investor.submit': 'Materiaal aanvragen',
     'investor.note': 'Of mail naar',
+
+    'partners.label': 'Partners',
+
     // Footer
     'footer.investors': 'Investeerders',
     'footer.tagline': 'Intelligentie op de plek van elke ontmoeting.',

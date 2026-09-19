@@ -1,0 +1,120 @@
+---
+import grok from '../assets/banner/grok.png';
+import nvidia from '../assets/banner/nvidia_golden.png';
+import rfdetr from '../assets/banner/rfdetr.png';
+import { useTranslations } from '../i18n/ui';
+
+const t = useTranslations(Astro.currentLocale);
+
+const partners = [
+  { src: nvidia, alt: 'NVIDIA' },
+  { src: grok, alt: 'Grok / xAI' },
+  { src: rfdetr, alt: 'RF-DETR' },
+];
+
+// Duplicate the list so the marquee can loop seamlessly
+const logos = [...partners, ...partners];
+---
+
+<section class="partners" aria-label="Partners">
+  <div class="inner">
+    <div class="section-head">
+      <p class="section-label">{t('partners.label')}</p>
+      <span class="section-rule" aria-hidden="true"></span>
+    </div>
+
+    <div class="marquee">
+      <div class="track">
+        {logos.map((p) => (
+          <div class="logo-item">
+            <img
+              src={p.src.src}
+              alt={p.alt}
+              width={p.src.width}
+              height={p.src.height}
+              loading="lazy"
+              decoding="async"
+              class="logo"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .partners {
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+    overflow: hidden;
+  }
+
+  .inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 2.75rem 1.5rem 3rem;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .section-label {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    white-space: nowrap;
+  }
+
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+  }
+
+  .track {
+    display: flex;
+    width: max-content;
+    gap: 4.5rem;
+    animation: scroll 28s linear infinite;
+  }
+
+  .marquee:hover .track {
+    animation-play-state: paused;
+  }
+
+  .logo-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.25rem;
+    opacity: 0.72;
+    transition: 
