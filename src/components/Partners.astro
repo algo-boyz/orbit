@@ -1,18 +1,22 @@
 ---
 import grok from '../assets/banner/grok.png';
+import jetson from '../assets/banner/jetson.png';
 import nvidia from '../assets/banner/nvidia_golden.png';
 import rfdetr from '../assets/banner/rfdetr.png';
+import veruvian from '../assets/banner/logo.svg';
 import { useTranslations } from '../i18n/ui';
 
 const t = useTranslations(Astro.currentLocale);
 
 const partners = [
-  { src: nvidia, alt: 'NVIDIA' },
-  { src: grok, alt: 'Grok / xAI' },
-  { src: rfdetr, alt: 'RF-DETR' },
+  { src: nvidia.src, alt: 'NVIDIA' },
+  { src: grok.src, alt: 'Grok / xAI' },
+  { src: jetson.src, alt: 'Jetson' },
+  { src: rfdetr.src, alt: 'RF-DETR' },
+  { src: veruvian.src, alt: 'AJ' },
 ];
 
-// Duplicate the list so the marquee can loop seamlessly
+// Duplicate for seamless infinite loop
 const logos = [...partners, ...partners];
 ---
 
@@ -28,13 +32,11 @@ const logos = [...partners, ...partners];
         {logos.map((p) => (
           <div class="logo-item">
             <img
-              src={p.src.src}
+              src={p.src}
               alt={p.alt}
-              width={p.src.width}
-              height={p.src.height}
+              class="logo"
               loading="lazy"
               decoding="async"
-              class="logo"
             />
           </div>
         ))}
@@ -115,6 +117,55 @@ const logos = [...partners, ...partners];
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 3.25rem;
+    height: 3.5rem;
     opacity: 0.72;
-    transition: 
+    transition: opacity 0.25s ease, filter 0.25s ease;
+  }
+
+  .logo-item:hover {
+    opacity: 1;
+  }
+
+  .logo {
+    height: 2.75rem;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+    filter: grayscale(0.35) brightness(1.05);
+  }
+
+  .logo-item:hover .logo {
+    filter: grayscale(0) brightness(1.1);
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .track {
+      animation: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5rem;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .track {
+      gap: 3rem;
+      animation-duration: 22s;
+    }
+
+    .logo {
+      height: 2.25rem;
+      max-width: 130px;
+    }
+  }
+</style>
