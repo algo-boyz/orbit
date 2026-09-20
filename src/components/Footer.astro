@@ -1,6 +1,6 @@
 ---
 import { useTranslations } from '../i18n/ui';
-import logo from '../assets/veruvian-man.png';
+import logo from '../assets/agentjetson.png';
 
 const t = useTranslations(Astro.currentLocale);
 const locale = Astro.currentLocale ?? 'en';
@@ -14,7 +14,7 @@ const year = new Date().getFullYear();
   <div class="inner">
     <div class="brand">
       <a href={homeHref} class="logo" aria-label={t('nav.homeAria')}>
-        <img src={logo.src} alt="" width="32" height="32" class="mark" />
+        <img src={logo.src} alt="" width="128" height="128" class="mark" />
       </a>
     </div>
     <div class="meta">
