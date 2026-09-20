@@ -64,10 +64,31 @@ export const ui = {
     'demo.label': 'Demo',
     'demo1.title': 'Traffic analysis',
     'demo1.body':
-      'Watch Agent Jetson identify vehicles, plates, and persons of interest from live video — in real time, at the edge.',
-    'demo2.title': 'Object detection in action',
+      'Agent Jetson turns ordinary camera feeds into continuous, real-time intelligence no human team can match in volume, speed, or consistency.',
+    'demo1.1.title': 'Multi-class object detection',
+    'demo1.1.body':
+      'Detects vehicles, persons, and objects of interest simultaneously across cluttered scenes — at frame rates and with persistence that exceed sustained human attention.',
+    'demo1.2.title': 'Live traffic analysis',
+    'demo1.2.body':
+      'Counts, classifies, and correlates movement across lanes and cameras in real time, surfacing anomalies a dispatcher would miss under load.',
+    'demo1.3.title': 'Speed estimation from video',
+    'demo1.3.body':
+      'Estimates vehicle speed from monocular video alone — no radar or lidar required — solving a classic computer-vision problem at the edge.',
+    'demo2.title': 'Advanced perception',
     'demo2.body':
-      'Watch Agent Jetson identify vehicles, plates, and persons of interest from live video — in real time, at the edge.',
+      'Beyond detection: privacy, depth, identity persistence, and text recognition that run continuously where humans cannot scale.',
+    'demo2.1.title': 'Real-time privacy blur',
+    'demo2.1.body':
+      'Automatically redacts faces and plates on live streams so agencies retain operational value while meeting privacy and retention constraints humans cannot enforce frame-by-frame.',
+    'demo2.2.title': 'Monocular distance estimation',
+    'demo2.2.body':
+      'Infers range and relative depth from a single camera — giving officers spatial context before contact that pure 2-D video cannot provide.',
+    'demo2.3.title': 'Persistent multi-object tracking',
+    'demo2.3.body':
+      'Maintains identity across occlusion, camera hand-off, and crowded scenes — a combinatorial problem that collapses under human cognitive load.',
+    'demo2.4.title': 'Live OCR on moving targets',
+    'demo2.4.body':
+      'Reads plates and text from vehicles and scenes in motion at the edge, turning fleeting visual cues into structured, searchable intelligence.',
 
     // Edge
     'edge.label': 'Edge AI',
@@ -174,10 +195,31 @@ export const ui = {
     'demo.label': 'Demo',
     'demo1.title': 'Análisis de tráfico',
     'demo1.body':
-      'Observa cómo Agent Jetson identifica vehículos, matrículas y personas de interés a partir de vídeo en directo — en tiempo real, en el edge.',
-    'demo2.title': 'Detección de objetos en acción',
+      'Agent Jetson convierte feeds de cámaras ordinarios en inteligencia continua en tiempo real que ningún equipo humano puede igualar en volumen, velocidad o consistencia.',
+    'demo1.1.title': 'Detección multi-clase de objetos',
+    'demo1.1.body':
+      'Detecta vehículos, personas y objetos de interés simultáneamente en escenas abarrotadas — a tasas de fotogramas y con persistencia que superan la atención humana sostenida.',
+    'demo1.2.title': 'Análisis de tráfico en vivo',
+    'demo1.2.body':
+      'Cuenta, clasifica y correlaciona el movimiento entre carriles y cámaras en tiempo real, revelando anomalías que un despachador pasaría por alto bajo carga.',
+    'demo1.3.title': 'Estimación de velocidad desde vídeo',
+    'demo1.3.body':
+      'Estima la velocidad de vehículos solo a partir de vídeo monocular — sin radar ni lidar — resolviendo un problema clásico de visión por computador en el edge.',
+    'demo2.title': 'Percepción avanzada',
     'demo2.body':
-      'Observa cómo Agent Jetson identifica vehículos, matrículas y personas de interés a partir de vídeo en directo — en tiempo real, en el edge.',
+      'Más allá de la detección: privacidad, profundidad, persistencia de identidad y reconocimiento de texto que operan de forma continua donde los humanos no pueden escalar.',
+    'demo2.1.title': 'Desenfoque de privacidad en tiempo real',
+    'demo2.1.body':
+      'Redacta automáticamente caras y matrículas en transmisiones en vivo para que las agencias conserven valor operativo mientras cumplen restricciones de privacidad y retención que los humanos no pueden aplicar fotograma a fotograma.',
+    'demo2.2.title': 'Estimación de distancia monocular',
+    'demo2.2.body':
+      'Infiere distancia y profundidad relativa desde una sola cámara — dando a los agentes contexto espacial antes del contacto que el vídeo 2-D puro no puede proporcionar.',
+    'demo2.3.title': 'Seguimiento multi-objeto persistente',
+    'demo2.3.body':
+      'Mantiene la identidad a través de oclusiones, traspasos de cámara y escenas concurridas — un problema combinatorio que colapsa bajo la carga cognitiva humana.',
+    'demo2.4.title': 'OCR en vivo sobre objetivos en movimiento',
+    'demo2.4.body':
+      'Lee matrículas y texto de vehículos y escenas en movimiento en el edge, convirtiendo indicios visuales fugaces en inteligencia estructurada y buscable.',
 
     'edge.label': 'IA en el borde',
     'edge.title': 'Inteligencia que viaja con la misión.',
@@ -280,10 +322,31 @@ export const ui = {
     'demo.label': 'Démo',
     'demo1.title': 'Analyse du trafic',
     'demo1.body':
-      'Regardez Agent Jetson identifier véhicules, plaques et personnes d\'intérêt à partir de flux vidéo en direct — en temps réel, en périphérie.',
-    'demo2.title': 'Détection d\'objets en action',
+      'Agent Jetson transforme des flux de caméras ordinaires en intelligence continue en temps réel qu’aucune équipe humaine ne peut égaler en volume, vitesse ou constance.',
+    'demo1.1.title': 'Détection multi-classes d’objets',
+    'demo1.1.body':
+      'Détecte simultanément véhicules, personnes et objets d’intérêt dans des scènes encombrées — à des fréquences d’images et avec une persistance qui dépassent l’attention humaine soutenue.',
+    'demo1.2.title': 'Analyse du trafic en direct',
+    'demo1.2.body':
+      'Compte, classe et corrèle les mouvements entre voies et caméras en temps réel, faisant apparaître des anomalies qu’un répartiteur manquerait sous charge.',
+    'demo1.3.title': 'Estimation de vitesse à partir de la vidéo',
+    'demo1.3.body':
+      'Estime la vitesse des véhicules à partir d’une vidéo monoculaire seule — sans radar ni lidar — en résolvant un problème classique de vision par ordinateur en périphérie.',
+    'demo2.title': 'Perception avancée',
     'demo2.body':
-      'Regardez Agent Jetson identifier véhicules, plaques et personnes d\'intérêt à partir de flux vidéo en direct — en temps réel, en périphérie.',
+      'Au-delà de la détection : confidentialité, profondeur, persistance d’identité et reconnaissance de texte qui s’exécutent en continu là où les humains ne peuvent pas passer à l’échelle.',
+    'demo2.1.title': 'Flou de confidentialité en temps réel',
+    'demo2.1.body':
+      'Masque automatiquement visages et plaques sur les flux en direct afin que les agences conservent la valeur opérationnelle tout en respectant les contraintes de confidentialité et de conservation qu’aucun humain ne peut appliquer image par image.',
+    'demo2.2.title': 'Estimation de distance monoculaire',
+    'demo2.2.body':
+      'Infère la distance et la profondeur relative à partir d’une seule caméra — offrant aux agents un contexte spatial avant le contact que la pure vidéo 2-D ne peut fournir.',
+    'demo2.3.title': 'Suivi multi-objets persistant',
+    'demo2.3.body':
+      'Maintient l’identité à travers occlusions, transferts de caméra et scènes encombrées — un problème combinatoire qui s’effondre sous la charge cognitive humaine.',
+    'demo2.4.title': 'OCR en direct sur cibles en mouvement',
+    'demo2.4.body':
+      'Lit plaques et texte sur véhicules et scènes en mouvement en périphérie, transformant des indices visuels fugaces en intelligence structurée et interrogeable.',
 
     'edge.label': 'IA de bord',
     'edge.title': 'Une intelligence qui voyage avec la mission.',
@@ -386,10 +449,31 @@ export const ui = {
     'demo.label': 'Demo',
     'demo1.title': 'Lagebild',
     'demo1.body':
-      'Sehen Sie, wie Agent Jetson Fahrzeuge, Kennzeichen und Personen von Interesse aus Live-Video erkennt — in Echtzeit, am Edge.',
-    'demo2.title': 'Objekterkennung in Aktion',
+      'Agent Jetson verwandelt gewöhnliche Kamerazuführungen in kontinuierliche Echtzeit-Intelligenz, die kein menschliches Team in Volumen, Geschwindigkeit oder Konstanz erreichen kann.',
+    'demo1.1.title': 'Mehrklassen-Objekterkennung',
+    'demo1.1.body':
+      'Erkennt Fahrzeuge, Personen und relevante Objekte gleichzeitig in unübersichtlichen Szenen — mit Bildraten und Persistenz, die die anhaltende menschliche Aufmerksamkeit übersteigen.',
+    'demo1.2.title': 'Live-Verkehrsanalyse',
+    'demo1.2.body':
+      'Zählt, klassifiziert und korreliert Bewegungen über Fahrspuren und Kameras in Echtzeit und deckt Anomalien auf, die ein Dispatcher unter Last übersehen würde.',
+    'demo1.3.title': 'Geschwindigkeitsschätzung aus Video',
+    'demo1.3.body':
+      'Schätzt Fahrzeuggeschwindigkeit allein aus monokularem Video — ohne Radar oder Lidar — und löst damit ein klassisches Computer-Vision-Problem am Edge.',
+    'demo2.title': 'Erweiterte Wahrnehmung',
     'demo2.body':
-      'Sehen Sie, wie Agent Jetson Fahrzeuge, Kennzeichen und Personen von Interesse aus Live-Video erkennt — in Echtzeit, am Edge.',
+      'Jenseits der Erkennung: Privatsphäre, Tiefe, Identitätspersistenz und Texterkennung, die kontinuierlich laufen, wo Menschen nicht skalieren können.',
+    'demo2.1.title': 'Echtzeit-Privatsphäre-Unschärfe',
+    'demo2.1.body':
+      'Schwärzt automatisch Gesichter und Kennzeichen in Live-Streams, damit Behörden den operativen Nutzen behalten und zugleich Datenschutz- und Aufbewahrungsvorgaben erfüllen, die Menschen nicht bildweise durchsetzen können.',
+    'demo2.2.title': 'Monokulare Distanzschätzung',
+    'demo2.2.body':
+      'Leitet Entfernung und relative Tiefe aus einer einzigen Kamera ab — und gibt Beamten räumlichen Kontext vor dem Kontakt, den reines 2-D-Video nicht liefern kann.',
+    'demo2.3.title': 'Persistentes Multi-Objekt-Tracking',
+    'demo2.3.body':
+      'Hält Identitäten über Verdeckungen, Kameraübergänge und Menschenmengen hinweg — ein kombinatorisches Problem, das unter menschlicher kognitiver Last zusammenbricht.',
+    'demo2.4.title': 'Live-OCR auf bewegten Zielen',
+    'demo2.4.body':
+      'Liest Kennzeichen und Text von Fahrzeugen und Szenen in Bewegung am Edge und verwandelt flüchtige visuelle Hinweise in strukturierte, durchsuchbare Intelligenz.',
 
     'edge.label': 'Edge-KI',
     'edge.title': 'Intelligenz, die mit der Mission reist.',
@@ -496,10 +580,31 @@ export const ui = {
     'demo.label': 'Demo',
     'demo1.title': 'Verkeersanalyse',
     'demo1.body':
-      'Bekijk hoe Agent Jetson voertuigen, kentekens en personen van belang herkent uit live video — in real time, aan de edge.',
-    'demo2.title': 'Objectdetectie in actie',
+      'Agent Jetson zet gewone camerabeelden om in continue realtime-intelligentie die geen menselijk team kan evenaren in volume, snelheid of consistentie.',
+    'demo1.1.title': 'Multi-klasse objectdetectie',
+    'demo1.1.body':
+      'Detecteert voertuigen, personen en objecten van belang tegelijkertijd in drukke scènes — met framesnelheden en persistentie die de aanhoudende menselijke aandacht overtreffen.',
+    'demo1.2.title': 'Live verkeersanalyse',
+    'demo1.2.body':
+      'Telt, classificeert en correleert beweging over rijstroken en camera’s in realtime, en brengt anomalieën aan het licht die een centralist onder druk zou missen.',
+    'demo1.3.title': 'Snelheidsschatting uit video',
+    'demo1.3.body':
+      'Schat voertuigsnelheid uitsluitend uit monoculaire video — zonder radar of lidar — en lost zo een klassiek computer-vision-probleem aan de edge op.',
+    'demo2.title': 'Geavanceerde perceptie',
     'demo2.body':
-      'Bekijk hoe Agent Jetson voertuigen, kentekens en personen van belang herkent uit live video — in real time, aan de edge.',
+      'Voorbij detectie: privacy, diepte, identiteitspersistentie en tekstherkenning die continu draaien waar mensen niet kunnen opschalen.',
+    'demo2.1.title': 'Realtime privacy-blur',
+    'demo2.1.body':
+      'Redacteert automatisch gezichten en kentekens in livestreams, zodat agentschappen operationele waarde behouden terwijl ze privacy- en bewaartermijnen naleven die mensen niet frame-voor-frame kunnen afdwingen.',
+    'demo2.2.title': 'Monoculaire afstandsschatting',
+    'demo2.2.body':
+      'Leidt afstand en relatieve diepte af uit één camera — en geeft agenten ruimtelijke context vóór contact die pure 2D-video niet kan bieden.',
+    'demo2.3.title': 'Persistente multi-object tracking',
+    'demo2.3.body':
+      'Behoudt identiteit over occlusie, camera-overdrachten en drukke scènes heen — een combinatorisch probleem dat onder menselijke cognitieve belasting in elkaar stort.',
+    'demo2.4.title': 'Live OCR op bewegende doelen',
+    'demo2.4.body':
+      'Leest kentekens en tekst van voertuigen en scènes in beweging aan de edge, en zet vluchtige visuele signalen om in gestructureerde, doorzoekbare intelligentie.',
 
     // Edge
     'edge.label': 'Edge AI',
