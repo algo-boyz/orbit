@@ -12,17 +12,32 @@ const year = new Date().getFullYear();
 
 <footer class="footer">
   <div class="inner">
+    <!-- Brand column -->
     <div class="brand">
       <a href={homeHref} class="logo" aria-label={t('nav.homeAria')}>
-        <img src={logo.src} alt="" width="128" height="128" class="mark" />
+        <img src={logo.src} alt="AgentJetson" width="104" height="104" class="mark" />
       </a>
+      <div class="brand-text">
+        <strong>AJ</strong>
+        <p>{t('footer.tagline')}</p>
+      </div>
     </div>
-    <div class="meta">
-      <p>© {year} AgentJetson.ai</p>
-      <p>{t('footer.rights')}</p>
+
+    <!-- Company / legal column -->
+    <div class="company">
+      <p class="developed">
+        Developed by <strong>AlgoBoyz BV</strong> in Amsterdam
+      </p>
+      <p class="kvk">KvK: 93032080</p>
       <p class="links">
         <a href={investorsHref}>{t('footer.investors')}</a>
       </p>
+    </div>
+
+    <!-- Copyright -->
+    <div class="meta">
+      <p>© {year} AgentJetson.ai</p>
+      <p>{t('footer.rights')}</p>
     </div>
   </div>
 </footer>
@@ -36,68 +51,108 @@ const year = new Date().getFullYear();
   .inner {
     max-width: var(--max);
     margin: 0 auto;
-    padding: 2.5rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    padding: 3.25rem 1.5rem 3rem;
+    display: grid;
+    gap: 2.5rem;
   }
 
+  /* ——— Brand ——— */
   .brand {
     display: flex;
-    align-items: flex-start;
-    gap: 0.85rem;
+    align-items: center;
+    gap: 1.35rem;
   }
 
-  .mark {
-    display: grid;
-    place-items: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #3b82f6, #22d3ee);
-    color: #04101a;
-    font-size: 0.75rem;
-    font-weight: 700;
+  .logo {
+    display: block;
     flex-shrink: 0;
   }
 
-  .brand strong {
+  .mark {
+    width: 6.5rem;          /* noticeably larger */
+    height: 6.5rem;
+    border-radius: 16px;
+    object-fit: contain;
+    animation: pulse-glow 3.2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      filter: drop-shadow(0 0 0 rgba(59, 130, 246, 0));
+      transform: scale(1);
+    }
+    50% {
+      filter: drop-shadow(0 0 14px rgba(59, 130, 246, 0.6));
+      transform: scale(1.04);
+    }
+  }
+
+  .brand-text strong {
     display: block;
     font-family: "Space Grotesk", sans-serif;
-    font-size: 1rem;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 
-  .brand p {
-    margin: 0.2rem 0 0;
+  .brand-text p {
+    margin: 0.35rem 0 0;
     color: var(--text-dim);
-    font-size: 0.85rem;
+    font-size: 0.95rem;
+    max-width: 24rem;
+    line-height: 1.45;
   }
 
-  .meta {
+  /* ——— Company info ——— */
+  .company {
+    color: var(--text-muted);
+    font-size: 0.925rem;
+    line-height: 1.55;
+  }
+
+  .developed strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .kvk {
+    margin: 0.4rem 0 0.85rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
     color: var(--text-dim);
-    font-size: 0.8rem;
-  }
-
-  .meta p {
-    margin: 0.15rem 0;
   }
 
   .links a {
     color: var(--text-muted);
     text-decoration: underline;
-    text-underline-offset: 2px;
-    font-size: 0.8rem;
+    text-underline-offset: 3px;
+    font-size: 0.9rem;
   }
 
   .links a:hover {
     color: var(--text);
   }
 
-  @media (min-width: 640px) {
+  /* ——— Copyright ——— */
+  .meta {
+    color: var(--text-dim);
+    font-size: 0.825rem;
+  }
+
+  .meta p {
+    margin: 0.15rem 0;
+  }
+
+  /* Desktop layout */
+  @media (min-width: 768px) {
     .inner {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-end;
+      grid-template-columns: 1.5fr 1fr auto;
+      align-items: end;
+      gap: 2.5rem;
+    }
+
+    .meta {
+      text-align: right;
     }
   }
 </style>
