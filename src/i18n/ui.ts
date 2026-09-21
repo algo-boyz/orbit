@@ -75,7 +75,6 @@ export const ui = {
     'demo1.3.title': 'Speed estimation from video',
     'demo1.3.body':
       'Estimates vehicle speed from monocular video alone — no radar or lidar required — solving a classic computer-vision problem at the edge.',
-    'demo1.3.readMore': 'Read more…',
     'demo2.title': 'Advanced perception',
     'demo2.body':
       'Beyond detection: privacy, depth, identity persistence, and text recognition that run continuously where humans cannot scale.',
