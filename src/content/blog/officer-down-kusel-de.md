@@ -6,7 +6,7 @@ description: "Als zwei Polizeikräfte während einer routinemäßigen Verkehrsko
 
 heroImage: ../../assets/blog/kusel.png
 
-heroImageAlt: "Flowers and candles stand in Ulmet, near Kusel, Germany (Sebastian Gollnow, dpa/AP)"
+heroImageAlt: "Kerzen und Blumen stehen am Tatort in Ulmet, nahe Kusel (Sebastian Gollnow, dpa/AP)"
 
 pubDate: 2026-09-07
 

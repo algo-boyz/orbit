@@ -131,7 +131,7 @@ export const ui = {
     'investor.note': 'Or email',
 
     // Partners
-    'partners.label': 'Trusted by',
+    'partners.label': 'Family',
     
     // Footer
     'footer.investors': 'Investors',
@@ -260,7 +260,7 @@ export const ui = {
     'investor.submit': 'Solicitar materiales',
     'investor.note': 'O escriba a',
     
-    'partners.label': 'Con la confianza de',
+    'partners.label': 'Familia',
     
     'footer.investors': 'Inversores',
     'footer.tagline': 'Inteligencia en el borde de cada encuentro.',
@@ -388,7 +388,7 @@ export const ui = {
     'investor.submit': 'Demander les documents',
     'investor.note': 'Ou écrivez à',
 
-    'partners.label': 'Ils nous font confiance',
+    'partners.label': 'Famille',
 
     'footer.investors': 'Investisseurs',
     'footer.tagline': 'L’intelligence au bord de chaque rencontre.',
@@ -453,7 +453,7 @@ export const ui = {
     'demo.readMore': 'Weiterlesen…',
     'demo1.title': 'Lagebild',
     'demo1.body':
-      'Agent Jetson verwandelt gewöhnliche Kamerazuführungen in kontinuierliche Echtzeit-Intelligenz, die kein menschliches Team in Volumen, Geschwindigkeit oder Konstanz erreichen kann.',
+      'Agent Jetson verwandelt gewöhnliche Kamera-streams in kontinuierliche Echtzeit-Intelligenz, die kein menschliches Team in Volumen, Geschwindigkeit oder Konstanz erreichen kann.',
     'demo1.1.title': 'Mehrklassen-Objekterkennung',
     'demo1.1.body':
       'Erkennt Fahrzeuge, Personen und relevante Objekte gleichzeitig in unübersichtlichen Szenen — mit Bildraten und Persistenz, die die anhaltende menschliche Aufmerksamkeit übersteigen.',
@@ -504,7 +504,7 @@ export const ui = {
     'investor.lede':
       'Erzählen Sie uns kurz von sich. Wir prüfen und senden bei Passung einen sicheren Link zu den Unterlagen.',
     'investor.name': 'Name',
-    'investor.namePlaceholder': 'Vollständiger Name',
+    'investor.namePlaceholder': 'Name',
     'investor.email': 'E-Mail',
     'investor.emailPlaceholder': 'sie@fonds.com',
     'investor.org': 'Fonds / Organisation',
@@ -516,7 +516,7 @@ export const ui = {
     'investor.submit': 'Unterlagen anfordern',
     'investor.note': 'Oder schreiben Sie an',
 
-    'partners.label': 'Partners',
+    'partners.label': 'Familie',
 
     'footer.investors': 'Investoren',
     'footer.tagline': 'Intelligenz am Rand jeder Begegnung.',
@@ -651,7 +651,7 @@ export const ui = {
     'investor.submit': 'Materiaal aanvragen',
     'investor.note': 'Of mail naar',
 
-    'partners.label': 'Partners',
+    'partners.label': 'Familie',
 
     // Footer
     'footer.investors': 'Investeerders',
