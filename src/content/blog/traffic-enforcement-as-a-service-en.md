@@ -1,5 +1,5 @@
 ---
-title: "From Capture to Postbox: How Agent Jetson Closes the Full Traffic-Enforcement Loop"
+# title: "From Capture to Postbox: How Agent Jetson Closes the Full Traffic-Enforcement Loop"
 description: "Competitors sell Traffic Enforcement as a Service — sensors, analytics, & fine notices under one roof. Agent Jetson delivers the same end-to-end outcome with sovereign, edge-first intelligence: real-time violation capture on existing cameras, automated evidence packages, & citation-ready output that lands as a letter in the postbox — without surrendering data or control."
 heroImage: ../../assets/blog/traas.png
 pubDate: 2026-09-21
