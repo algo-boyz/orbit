@@ -115,6 +115,7 @@ const t = useTranslations(Astro.currentLocale);
     border-top: 1px solid var(--border);
     overflow: hidden;
     isolation: isolate;
+    scroll-margin-top: 10rem; /* clears sticky header + a little breathing room */
   }
 
   /* Background image – soft, right-biased */
@@ -161,6 +162,26 @@ const t = useTranslations(Astro.currentLocale);
     max-width: 28rem;
     position: relative;
     z-index: 2;
+  }
+
+  /* Mobile: center the whole contact block */
+  @media (max-width: 899px) {
+    .content {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .form {
+      text-align: left; /* keep labels/inputs left-aligned inside the centered block */
+    }
+
+    .note {
+      text-align: center;
+    }
+
+    .btn {
+      margin-inline: auto; /* optional: center the submit button */
+    }
   }
 
   .section-label {
