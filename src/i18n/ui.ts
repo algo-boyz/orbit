@@ -62,6 +62,7 @@ export const ui = {
 
     // Demo
     'demo.label': 'Demo',
+    'demo.readMore': 'Read more…',
     'demo1.title': 'Traffic analysis',
     'demo1.body':
       'Agent Jetson turns ordinary camera feeds into continuous, real-time intelligence no human team can match in volume, speed, or consistency.',
@@ -74,7 +75,7 @@ export const ui = {
     'demo1.3.title': 'Speed estimation from video',
     'demo1.3.body':
       'Estimates vehicle speed from monocular video alone — no radar or lidar required — solving a classic computer-vision problem at the edge.',
-    'demo2.title': 'Advanced perception',
+    'demo1.3.readMore': 'Read more…',
     'demo2.body':
       'Beyond detection: privacy, depth, identity persistence, and text recognition that run continuously where humans cannot scale.',
     'demo2.1.title': 'Real-time privacy blur',
@@ -193,6 +194,7 @@ export const ui = {
 
     // Demo
     'demo.label': 'Demo',
+    'demo.readMore': 'Leer más…',
     'demo1.title': 'Análisis de tráfico',
     'demo1.body':
       'Agent Jetson convierte feeds de cámaras ordinarios en inteligencia continua en tiempo real que ningún equipo humano puede igualar en volumen, velocidad o consistencia.',
@@ -320,6 +322,7 @@ export const ui = {
 
     // Demo
     'demo.label': 'Démo',
+    'demo.readMore': 'Lire la suite…',
     'demo1.title': 'Analyse du trafic',
     'demo1.body':
       'Agent Jetson transforme des flux de caméras ordinaires en intelligence continue en temps réel qu’aucune équipe humaine ne peut égaler en volume, vitesse ou constance.',
@@ -447,6 +450,7 @@ export const ui = {
 
     // Demo
     'demo.label': 'Demo',
+    'demo.readMore': 'Weiterlesen…',
     'demo1.title': 'Lagebild',
     'demo1.body':
       'Agent Jetson verwandelt gewöhnliche Kamerazuführungen in kontinuierliche Echtzeit-Intelligenz, die kein menschliches Team in Volumen, Geschwindigkeit oder Konstanz erreichen kann.',
@@ -578,6 +582,7 @@ export const ui = {
 
     // Demo
     'demo.label': 'Demo',
+    'demo.readMore': 'Lees meer…',
     'demo1.title': 'Verkeersanalyse',
     'demo1.body':
       'Agent Jetson zet gewone camerabeelden om in continue realtime-intelligentie die geen menselijk team kan evenaren in volume, snelheid of consistentie.',
