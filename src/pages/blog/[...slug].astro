@@ -25,46 +25,55 @@ const description = post.data.description;
 
 <Layout title={title} description={description}>
   <Header />
-  <main class="post">
-    <article class="inner">
-      <header class="post-header">
-        <a href="/blog/" class="back">{t('blog.back') || '← All posts'}</a>
-        <time datetime={post.data.pubDate.toISOString()}>
-          {post.data.pubDate.toLocaleDateString(locale, {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })}
-        </time>
-        <h1>{post.data.title}</h1>
-        {post.data.heroImage && (
-          <figure class="hero-image">
-            <Image
-              src={post.data.heroImage}
-              alt={post.data.heroImageAlt ?? ''}
-              widths={[400, 800, 1200]}
-              sizes="(max-width: 768px) 100vw, 800px"
-            />
-            {post.data.heroImageAlt && <figcaption>{post.data.heroImageAlt}</figcaption>}
-          </figure>
-        )}
-        <p class="description">{post.data.description}</p>
-        {
-          post.data.tags.length > 0 && (
-            <ul class="tags">
-              {post.data.tags.map((tag) => (
-                <li>{tag}</li>
-              ))}
-            </ul>
-          )
-        }
-      </header>
+    <main class="post">
+      <article>
+        <header class="post-header">
+          <div class="inner">
+            <a href="/blog/" class="back">{t('blog.back') || '← All posts'}</a>
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString(locale, {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+            <h1>{post.data.title}</h1>
+          </div>
 
-      <div class="prose">
-        <Content />
-      </div>
-    </article>
-  </main>
+          {post.data.heroImage && (
+            <figure class="hero-image">
+              <Image
+                src={post.data.heroImage}
+                alt={post.data.heroImageAlt ?? ''}
+                widths={[640, 960, 1280, 1600, 1920]}
+                sizes="100vw"
+                class="hero-img"
+              />
+              {post.data.heroImageAlt && (
+                <figcaption class="inner">{post.data.heroImageAlt}</figcaption>
+              )}
+            </figure>
+          )}
+
+          <div class="inner">
+            <p class="description">{post.data.description}</p>
+            {
+              post.data.tags.length > 0 && (
+                <ul class="tags">
+                  {post.data.tags.map((tag) => (
+                    <li>{tag}</li>
+                  ))}
+                </ul>
+              )
+            }
+          </div>
+        </header>
+
+        <div class="prose inner">
+          <Content />
+        </div>
+      </article>
+    </main>
   <Footer />
 </Layout>
 
