@@ -487,7 +487,7 @@ export const ui = {
     'cta.label': 'Kontakt',
     'cta.title': 'Bereit, aktive Intelligenz auf die Straße zu bringen?',
     'cta.lede':
-      'Fordern Sie ein privates Briefing an. Wir mappe Agent Jetson auf Ihre bestehenden Kameras, Richtlinien und operativen Anforderungen.',
+      'Fordern Sie ein privates Briefing an. Wir mappen Agent Jetson auf Ihre bestehenden Kameras, Richtlinien und operativen Anforderungen.',
     'cta.name': 'Name',
     'cta.namePlaceholder': 'Vollständiger Name',
     'cta.email': 'E-Mail',
