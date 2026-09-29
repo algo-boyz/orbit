@@ -1,13 +1,33 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
-import { locales, localeNames, type Locale } from '../i18n/config';
+import { locales, localeNames, defaultLocale, type Locale } from '../i18n/config';
 
-const current = (Astro.currentLocale ?? 'en') as Locale;
+const current = (Astro.currentLocale ?? defaultLocale) as Locale;
 
-// Preserve the rest of the path when switching (for future multi-page support)
-const pathWithoutLocale = Astro.url.pathname
-  .replace(/^\/(ar|en|es|fr|de|nl)(?=\/|$)/, '')
-  || '/';
+// Strip a leading locale segment so we can re-prefix for the target language
+const pathWithoutLocale =
+  Astro.url.pathname.replace(/^\/(ar|en|es|fr|de|nl)(?=\/|$)/, '') || '/';
+
+/**
+ * Blog posts are stored as separate entries per language with ids like
+ * `traffic-enforcement-as-a-service-en`. When switching language on a post
+ * page, swap the trailing `-{lang}` suffix so we land on the matching
+ * translation instead of a 404.
+ */
+function localizeBlogPath(path: string, target: Locale): string {
+  const blogPost = path.match(/^\/blog\/(.+?)\/?$/);
+  if (!blogPost) return path;
+
+  const slug = blogPost[1];
+  // Replace trailing -<locale> if present, otherwise append
+  const base = slug.replace(/-(ar|en|es|fr|de|nl)$/, '');
+  const nextSlug = `${base}-${target}`;
+
+  if (target === defaultLocale) {
+    return `/blog/${nextSlug}/`;
+  }
+  return `/${target}/blog/${nextSlug}/`;
+}
 ---
 
 <div class="lang-switcher">
@@ -23,12 +43,19 @@ const pathWithoutLocale = Astro.url.pathname
     "
   >
     {locales.map((code) => {
-      const href =
-        code === 'en'
-          ? pathWithoutLocale === '/'
-            ? '/'
-            : pathWithoutLocale
-          : getRelativeLocaleUrl(code, pathWithoutLocale === '/' ? '' : pathWithoutLocale);
+      // Prefer blog-aware mapping when on a post page
+      const blogHref = localizeBlogPath(pathWithoutLocale, code);
+      const isBlogPost = pathWithoutLocale.startsWith('/blog/') && pathWithoutLocale !== '/blog/';
+
+      let href: string;
+      if (isBlogPost) {
+        href = blogHref;
+      } else if (code === defaultLocale) {
+        href = pathWithoutLocale === '/' ? '/' : pathWithoutLocale;
+      } else {
+        href = getRelativeLocaleUrl(code, pathWithoutLocale === '/' ? '' : pathWithoutLocale);
+      }
+
       return (
         <option
           value={code}

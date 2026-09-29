@@ -1,0 +1,30 @@
+---
+/**
+ * Locale-prefixed blog post route.
+ * Paths: /<lang>/blog/<post-id>/  (ar, es, fr, de, nl, …)
+ *
+ * English posts stay unprefixed via src/pages/blog/[...slug].astro
+ * (prefixDefaultLocale: false).
+ */
+import { getCollection } from 'astro:content';
+import BlogPost from '../../../components/BlogPost.astro';
+import { defaultLocale, isValidLocale, type Locale } from '../../../i18n/config';
+
+export async function getStaticPaths() {
+  const posts = await getCollection(
+    'blog',
+    ({ data }) => !data.draft && data.lang !== defaultLocale && isValidLocale(data.lang),
+  );
+  return posts.map((post) => ({
+    params: {
+      lang: post.data.lang as Locale,
+      slug: post.id,
+    },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<BlogPost post={post} />
