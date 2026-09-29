@@ -11,7 +11,7 @@ const blog = defineCollection({
       updatedDate: z.coerce.date().optional(),
       author: z.string().default('AgentJetson Team'),
       tags: z.array(z.string()).default([]),
-      lang: z.enum(['en', 'es', 'fr', 'de', 'nl']).default('en'),
+      lang: z.enum(['ar', 'en', 'es', 'fr', 'de', 'nl']).default('en'),
       draft: z.boolean().default(false),
       heroImage: image().optional(),          // ← add this
       heroImageAlt: z.string().optional(),   // ← and this

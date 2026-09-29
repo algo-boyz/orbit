@@ -37,6 +37,7 @@ const ogImage = image.startsWith('http') ? image : new URL(image, SITE).href;
 
 // Map locale → og:locale
 const ogLocaleMap: Record<Locale, string> = {
+  ar: 'ar_SA',
   en: 'en_US',
   es: 'es_ES',
   fr: 'fr_FR',

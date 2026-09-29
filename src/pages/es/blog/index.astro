@@ -43,7 +43,7 @@ const description =
         {
           posts.map((post) => (
             <li>
-              <a href={`/blog/${post.id}/`} class="post-card">
+              <a href={`${locale === 'en' ? '' : `/${locale}`}/blog/${post.id}/`} class="post-card">
                 <time datetime={post.data.pubDate.toISOString()}>
                   {post.data.pubDate.toLocaleDateString(locale, {
                     year: 'numeric',

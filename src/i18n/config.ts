@@ -1,11 +1,12 @@
 /** Supported locales (must match astro.config.mjs) */
-export const locales = ['en', 'es', 'fr', 'de', 'nl'] as const;
+export const locales = ['en', 'ar', 'es', 'fr', 'de', 'nl'] as const;
 export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = 'en';
 
 /** Display names for language switcher */
 export const localeNames: Record<Locale, string> = {
+  ar: 'العربية',
   en: 'English',
   es: 'Español',
   fr: 'Français',
@@ -19,6 +20,30 @@ export const localeNames: Record<Locale, string> = {
  * Keep this conservative — language ≠ location.
  */
 export const countryToLocale: Record<string, Locale> = {
+  // Arabic-speaking / MENA
+  AE: 'ar', // United Arab Emirates
+  BH: 'ar', // Bahrain
+  DZ: 'ar', // Algeria
+  EG: 'ar', // Egypt
+  IQ: 'ar', // Iraq
+  JO: 'ar', // Jordan
+  KW: 'ar', // Kuwait
+  LB: 'ar', // Lebanon
+  LY: 'ar', // Libya
+  MA: 'ar', // Morocco
+  MR: 'ar', // Mauritania
+  OM: 'ar', // Oman
+  PS: 'ar', // Palestine
+  QA: 'ar', // Qatar
+  SA: 'ar', // Saudi Arabia
+  SD: 'ar', // Sudan
+  SO: 'ar', // Somalia
+  SY: 'ar', // Syria
+  TN: 'ar', // Tunisia
+  YE: 'ar', // Yemen
+  DJ: 'ar', // Djibouti
+  KM: 'ar', // Comoros
+
   // Spanish-speaking
   ES: 'es',
   MX: 'es',
@@ -39,18 +64,22 @@ export const countryToLocale: Record<string, Locale> = {
   CR: 'es',
   PA: 'es',
   UY: 'es',
+
   // French-speaking
   FR: 'fr',
-  BE: 'fr', // bilingual, default to fr for simplicity
+  BE: 'fr',
   LU: 'fr',
   MC: 'fr',
+
   // German-speaking
   DE: 'de',
   AT: 'de',
   LI: 'de',
+
   // Dutch-speaking
   NL: 'nl',
-  SR: 'nl', // Suriname
+  SR: 'nl',
+
   // CH left to browser preference (de/fr/it)
 };
 
