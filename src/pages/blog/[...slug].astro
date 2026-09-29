@@ -19,11 +19,22 @@ const { Content } = await render(post);
 const t = useTranslations(Astro.currentLocale);
 const locale = Astro.currentLocale ?? 'en';
 
-const title = `${post.data.title} — AgentJetson`;
+const title = post.data.title
+  ? `${post.data.title} — AgentJetson`
+  : 'Blog — AgentJetson';
 const description = post.data.description;
+const publishedTime = post.data.pubDate.toISOString();
+const modifiedTime = post.data.updatedDate?.toISOString();
 ---
 
-<Layout title={title} description={description}>
+<Layout
+  title={title}
+  description={description}
+  ogType="article"
+  publishedTime={publishedTime}
+  modifiedTime={modifiedTime}
+  author={post.data.author}
+>
   <Header />
     <main class="post">
       <article>

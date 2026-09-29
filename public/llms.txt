@@ -1,0 +1,27 @@
+# AgentJetson.ai
+
+> Sovereign edge AI that turns live video into real-time detection and operational intelligence for public safety. Defense-grade. Human-governed. Sovereign.
+
+Agent Jetson runs on NVIDIA Jetson-class hardware and hardened edge nodes so detection stays local, low-latency, and under agency control.
+
+## Site
+
+- Homepage: https://www.agentjetson.ai/
+- Blog: https://www.agentjetson.ai/blog/
+- Contact: https://www.agentjetson.ai/#contact
+- Investors: https://www.agentjetson.ai/investors
+
+## Locales
+
+- English (default): https://www.agentjetson.ai/
+- Español: https://www.agentjetson.ai/es/
+- Français: https://www.agentjetson.ai/fr/
+- Deutsch: https://www.agentjetson.ai/de/
+- Nederlands: https://www.agentjetson.ai/nl/
+
+## Company
+
+- Legal name: AlgoBoyz BV
+- Location: Amsterdam, Netherlands
+- KvK: 93032080
+- Email: hello@agentjetson.ai
