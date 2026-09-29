@@ -5,6 +5,7 @@
   <url>
     <loc>https://www.agentjetson.ai/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.agentjetson.ai/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.agentjetson.ai/ar/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://www.agentjetson.ai/es/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.agentjetson.ai/fr/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.agentjetson.ai/de/" />
@@ -16,6 +17,7 @@
   <url>
     <loc>https://www.agentjetson.ai/es/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.agentjetson.ai/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.agentjetson.ai/ar/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://www.agentjetson.ai/es/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.agentjetson.ai/fr/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.agentjetson.ai/de/" />
@@ -27,6 +29,7 @@
   <url>
     <loc>https://www.agentjetson.ai/fr/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.agentjetson.ai/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.agentjetson.ai/ar/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://www.agentjetson.ai/es/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.agentjetson.ai/fr/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.agentjetson.ai/de/" />
@@ -38,6 +41,7 @@
   <url>
     <loc>https://www.agentjetson.ai/de/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.agentjetson.ai/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.agentjetson.ai/ar/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://www.agentjetson.ai/es/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.agentjetson.ai/fr/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.agentjetson.ai/de/" />
@@ -49,6 +53,7 @@
   <url>
     <loc>https://www.agentjetson.ai/nl/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.agentjetson.ai/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.agentjetson.ai/ar/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://www.agentjetson.ai/es/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.agentjetson.ai/fr/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.agentjetson.ai/de/" />
@@ -63,6 +68,11 @@
     <loc>https://www.agentjetson.ai/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.agentjetson.ai/ar/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.agentjetson.ai/es/blog/</loc>
@@ -100,6 +110,12 @@
   </url>
   <!-- Blog posts (localized) -->
   <url>
+    <loc>https://www.agentjetson.ai/blog/traffic-enforcement-as-a-service-ar/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.agentjetson.ai/blog/traffic-enforcement-as-a-service-es/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -120,6 +136,12 @@
   <url>
     <loc>https://www.agentjetson.ai/blog/traffic-enforcement-as-a-service-nl/</loc>
     <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.agentjetson.ai/blog/officer-down-kusel-ar/</loc>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -155,14 +177,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.agentjetson.ai/ar/investors</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.agentjetson.ai/es/investors</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.2</priority>
   </url>
   <url>
     <loc>https://www.agentjetson.ai/fr/investors</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.agentjetson.ai/de/investors</loc>

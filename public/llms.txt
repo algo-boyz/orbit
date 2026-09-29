@@ -18,6 +18,7 @@ Agent Jetson runs on NVIDIA Jetson-class hardware and hardened edge nodes so det
 - Français: https://www.agentjetson.ai/fr/
 - Deutsch: https://www.agentjetson.ai/de/
 - Nederlands: https://www.agentjetson.ai/nl/
+- Arabic: https://www.agentjetson.ai/ar/
 
 ## Company
 
