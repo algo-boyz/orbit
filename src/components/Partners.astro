@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import cloudflare from '../assets/banner/cloudflare.png';
 import cpp from '../assets/banner/cpp.png';
-import grok from '../assets/banner/grok.jpeg';
+import grok from '../assets/banner/grok.png';
 import jetson from '../assets/banner/jetson.png';
 import sherpa from '../assets/banner/k2.png';
 import linux from '../assets/banner/linux.png';
@@ -10,7 +10,7 @@ import nvidia from '../assets/banner/nvidia.png';
 import onnx from '../assets/banner/onnx.png';
 import tensorflow from '../assets/banner/tf.png';
 import rfdetr from '../assets/banner/rfdetr.png';
-import veruvian from '../assets/banner/veruvian.png';
+import veruvian from '../assets/banner/logo.png';
 import huggingface from '../assets/banner/hf.png';
 import bannerBg from '../assets/banner_bg.png';
 import { useTranslations } from '../i18n/ui';
@@ -22,12 +22,12 @@ const partners = [
   { src: grok,       alt: 'Grok / xAI', href: 'https://x.ai', class: 'logo' },
   { src: linux,      alt: 'Linux',      href: 'https://www.linuxfoundation.org/', class: 'logo' },
   { src: jetson,     alt: 'Jetson',     href: 'https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/', class: 'logo' },
-  { src: sherpa,     alt: 'Sherpa',     href: 'https://k2-fsa.github.io/sherpa/', class: 'logo' },
-  { src: rfdetr,     alt: 'RF-DETR',    href: 'https://rfdetr.roboflow.com', class: 'logo' },
-  { src: onnx,       alt: 'ONNX',       href: 'https://onnx.ai/', class: 'logo' },
   { src: tensorflow, alt: 'TensorFlow', href: 'https://www.tensorflow.org/', class: 'logo' },
-  // { src: veruvian,   alt: 'AJ',         href: 'https://agentjetson.ai',   class: 'logo' },
+  { src: rfdetr,     alt: 'RF-DETR',    href: 'https://rfdetr.roboflow.com', class: 'logo' },
+  { src: sherpa,     alt: 'Sherpa',     href: 'https://k2-fsa.github.io/sherpa/', class: 'logo' },
+  { src: onnx,       alt: 'ONNX',       href: 'https://onnx.ai/', class: 'logo' },
   { src: huggingface,alt: 'Hugging Face', href: 'https://huggingface.co/',   class: 'logo' },
+  { src: veruvian,   alt: 'AJ',         href: 'https://agentjetson.ai',   class: 'logo' },
   { src: cpp,        alt: 'CPP',        href: 'https://isocpp.org/', class: 'logo' },
   { src: cloudflare, alt: 'CloudFlare', href: 'https://www.cloudflare.com', class: 'logo cloudflare' },
 ];
