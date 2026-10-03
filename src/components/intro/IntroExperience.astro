@@ -1,0 +1,282 @@
+---
+/**
+ * AgentJetson cinematic intro — faithful to the Space theme mechanics:
+ * - Full Wormhole Extreme WebGL background (iframe)
+ * - Large particle title "AGENT JETSON" with hover/touch disruption
+ * - Veruvian Man as the click-to-enter control (not hover)
+ * - Original hyper-travel wormhole in the 3D scene, then handoff to the site
+ *
+ * Session-gated, skippable, reduced-motion aware.
+ */
+const particleTitle = "AGENT JETSON";
+---
+<div
+  class="aj-intro"
+  data-aj-intro
+  role="dialog"
+  aria-modal="true"
+  aria-label="Agent Jetson introduction"
+>
+  <section class="wormhole-home" aria-label="Cinematic introduction">
+    <iframe
+      class="wormhole-home__frame"
+      data-wormhole-frame
+      src="/wormhole-home.html?locale=en"
+      title="Interactive space scene"
+      tabindex="-1"
+    ></iframe>
+
+    <!-- Click target: Veruvian Man — only this starts the wormhole -->
+    <a
+      class="wormhole-home__cover-cta"
+      data-hyper-travel
+      data-aj-enter
+      href="#enter"
+      aria-label="Enter Agent Jetson"
+    >
+      <img
+        src="/media/veruvian-man-5.png"
+        alt="Agent Jetson"
+        width="800"
+        height="1200"
+      />
+    </a>
+
+    <!-- Particle title (full-width, hover responds) -->
+    <div class="title-particles" aria-hidden="true">
+      <canvas data-title-particles data-title={particleTitle}></canvas>
+    </div>
+    <h1
+      class="title-particles__fallback"
+      data-title-fallback
+      data-title={particleTitle}
+    >
+      {particleTitle}
+    </h1>
+
+    <p class="aj-intro__tagline">Sovereign AI for the public good</p>
+  </section>
+
+  <button class="aj-intro__skip" type="button" data-aj-skip>
+    Skip intro
+  </button>
+</div>
+
+<style>
+  .aj-intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #010208;
+    color: #e8f1ff;
+    transition: opacity 0.55s ease, visibility 0.55s ease;
+  }
+
+  .aj-intro.is-done {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .wormhole-home {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #010208;
+  }
+
+  .wormhole-home__frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    pointer-events: auto;
+  }
+
+  /* Large particle title — nearly full viewport width */
+  .title-particles {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .title-particles canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .title-particles canvas[data-failed="true"],
+  .title-particles canvas[data-disabled="true"] {
+    display: none;
+  }
+
+  .title-particles__fallback {
+    position: absolute;
+    z-index: 3;
+    top: 42%;
+    left: 50%;
+    width: min(96vw, 1400px);
+    margin: 0;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 11vw, 7.5rem);
+    letter-spacing: 0.08em;
+    line-height: 1;
+    color: #eef6ff;
+    text-shadow:
+      0 0 40px rgba(140, 190, 255, 0.45),
+      0 0 2px rgba(200, 230, 255, 0.6);
+    pointer-events: none;
+  }
+
+  .title-particles__fallback[data-visible="false"] {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .aj-intro__tagline {
+    position: absolute;
+    z-index: 4;
+    top: calc(42% + clamp(1.6rem, 6vw, 4.2rem));
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    width: min(90vw, 36rem);
+    text-align: center;
+    font-size: clamp(0.7rem, 1.6vw, 0.9rem);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(170, 200, 255, 0.7);
+    pointer-events: none;
+  }
+
+  /* Veruvian Man — click only, scales on hover like Space */
+  .wormhole-home__cover-cta {
+    position: absolute;
+    z-index: 5;
+    top: 72%;
+    left: 50%;
+    width: clamp(88px, 11vw, 140px);
+    border-radius: 4px;
+    box-shadow:
+      0 0 0 1px rgba(238, 248, 255, 0.88),
+      0 0 24px rgba(182, 224, 255, 0.72),
+      0 12px 32px rgba(0, 0, 0, 0.72);
+    line-height: 0;
+    transform: translate(-50%, -50%) scale(1);
+    transform-origin: center;
+    transition: transform 180ms ease;
+    cursor: pointer;
+  }
+
+  .wormhole-home__cover-cta img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: inherit;
+  }
+
+  .wormhole-home__cover-cta:hover,
+  .wormhole-home__cover-cta:focus-visible {
+    transform: translate(-50%, -50%) scale(1.85);
+  }
+
+  .wormhole-home__cover-cta:focus-visible {
+    outline: 3px solid #8fdcff;
+    outline-offset: 4px;
+  }
+
+  .aj-intro__skip {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    z-index: 6;
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: rgba(180, 200, 230, 0.55);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .aj-intro__skip:hover,
+  .aj-intro__skip:focus-visible {
+    color: rgba(220, 235, 255, 0.95);
+    outline: none;
+  }
+
+  @media (max-height: 520px) and (orientation: landscape) {
+    .wormhole-home__cover-cta {
+      top: 78%;
+      width: clamp(56px, 14vh, 88px);
+    }
+    .title-particles__fallback {
+      top: 38%;
+      font-size: clamp(1.8rem, 9vw, 4rem);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wormhole-home__cover-cta {
+      transition: none;
+    }
+    .aj-intro {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  import "../../scripts/title-particles.ts";
+
+  const SESSION_KEY = "aj-intro-seen";
+  const root = document.querySelector<HTMLElement>("[data-aj-intro]");
+  const skip = document.querySelector<HTMLButtonElement>("[data-aj-skip]");
+
+  function markSeen() {
+    try {
+      sessionStorage.setItem(SESSION_KEY, "1");
+    } catch {
+      /* ignore */
+    }
+  }
+
+  function shouldShow(): boolean {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return false;
+    }
+    try {
+      return sessionStorage.getItem(SESSION_KEY) !== "1";
+    } catch {
+      return true;
+    }
+  }
+
+  function finish() {
+    if (!root || root.classList.contains("is-done")) return;
+    markSeen();
+    root.classList.add("is-done");
+    root.setAttribute("aria-hidden", "true");
+    document.documentElement.classList.remove("aj-intro-active");
+  }
+
+  if (!root) {
+    // no-op
+  } else if (!shouldShow()) {
+    root.classList.add("is-done");
+    root.setAttribute("aria-hidden", "true");
+  } else {
+    document.documentElement.classList.add("aj-intro-active");
+    window.addEventListener("aj-intro-complete", finish, { once: true });
+    skip?.addEventListener("click", finish);
+  }
+</script>

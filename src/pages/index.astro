@@ -13,9 +13,11 @@ import Edge from "../components/Edge.astro";
 import CTA from "../components/CTA.astro";
 import Partners from "../components/Partners.astro";
 import Footer from "../components/Footer.astro";
+import IntroExperience from "../components/intro/IntroExperience.astro";
 ---
 
 <Layout>
+  <IntroExperience />
   <Header />
   <main>
     <Hero />
@@ -29,3 +31,13 @@ import Footer from "../components/Footer.astro";
   </main>
   <Footer />
 </Layout>
+
+<style is:global>
+  /* Lock scroll while the cinematic intro is active */
+  html.aj-intro-active {
+    overflow: hidden;
+  }
+  html.aj-intro-active body {
+    overflow: hidden;
+  }
+</style>
