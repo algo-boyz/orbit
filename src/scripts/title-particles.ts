@@ -103,8 +103,13 @@ const fragmentShader = /* glsl */ `
 precision highp float;
 
 uniform sampler2D uTexture;
+uniform float uTime;
 varying vec2 vPUv;
 varying vec2 vUv;
+
+float random(float n) {
+  return fract(sin(n) * 43758.5453123);
+}
 
 void main() {
   vec4 color = texture2D(uTexture, vPUv);
@@ -115,7 +120,19 @@ void main() {
   float dist = radius - distance(vUv, vec2(0.5));
   float alpha = smoothstep(0.0, border, dist);
 
-  gl_FragColor = vec4(vec3(grey), alpha);
+  // Gold base (matches Veruvian Man parchment/gold)
+  vec3 goldDark  = vec3(0.55, 0.38, 0.08);   // deep amber
+  vec3 goldMid  = vec3(0.83, 0.69, 0.22);   // classic gold #D4AF37-ish
+  vec3 goldLight = vec3(1.00, 0.92, 0.55);   // bright highlight
+
+  // Slight per-particle + time shimmer for glitter
+  float sparkle = 0.85 + 0.15 * sin(uTime * 3.0 + grey * 40.0 + random(grey) * 6.28);
+  float t = clamp(grey * sparkle, 0.0, 1.0);
+
+  vec3 gold = mix(goldDark, goldMid, smoothstep(0.0, 0.55, t));
+  gold = mix(gold, goldLight, smoothstep(0.55, 1.0, t));
+
+  gl_FragColor = vec4(gold, alpha * max(grey, 0.15));
 }
 `;
 
@@ -391,7 +408,7 @@ function makeTitleSource(title: string, width: number, height: number) {
   context.letterSpacing = `${fontSize * 0.035}px`;
   context.textAlign = "center";
   context.textBaseline = "middle";
-  context.fillStyle = "white";
+  context.fillStyle = "#C9A227";
   context.fillText(title, width / 2, height * 0.46);
 
   return { canvas, pixels: context.getImageData(0, 0, width, height).data };
