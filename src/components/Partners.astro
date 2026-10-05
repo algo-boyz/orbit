@@ -1,7 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import cloudflare from '../assets/banner/cloudflare.png';
-import cpp from '../assets/banner/cpp.png';
+import cpp from '../assets/banner/cpp.gif';
+import go from '../assets/banner/party-gopher.gif';
 import grok from '../assets/banner/grok.png';
 import jetson from '../assets/banner/jetson.png';
 import sherpa from '../assets/banner/k2.png';
@@ -12,7 +13,7 @@ import tensorflow from '../assets/banner/tf.png';
 import roboflow from '../assets/banner/roboflow.png';
 import rfdetr from '../assets/banner/rfdetr.png';
 import veruvian from '../assets/banner/logo.png';
-import huggingface from '../assets/banner/hf.png';
+import huggingface from '../assets/banner/hf.gif';
 import bannerBg from '../assets/banner_bg.png';
 import { useTranslations } from '../i18n/ui';
 
@@ -31,6 +32,7 @@ const partners = [
   { src: onnx,       alt: 'ONNX',       href: 'https://onnx.ai/', class: 'logo' },
   { src: roboflow,   alt: 'RoboFlow',   href: 'https://www.roboflow.com/', class: 'logo' },
   { src: cpp,        alt: 'CPP',        href: 'https://isocpp.org/', class: 'logo' },
+  { src: go,         alt: 'Golang',     href: 'https://go.dev/', class: 'logo' },
   { src: cloudflare, alt: 'CloudFlare', href: 'https://www.cloudflare.com', class: 'logo cloudflare' },
 ];
 
@@ -46,26 +48,44 @@ const logos = [...partners, ...partners];
 
     <div class="marquee">
       <div class="track">
-        {logos.map((p) => (
-          <a
-            href={p.href}
-            class="logo-item"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={p.alt}
-          >
-            <Image
-              src={p.src}
-              alt={p.alt}
-              class={p.class}
-              widths={[120, 180, 240]}
-              sizes="(max-width: 640px) 130px, 180px"
-              loading="lazy"
-              decoding="async"
-            />
-            <span class="hovercard" aria-hidden="true">{p.alt}</span>
-          </a>
-        ))}
+        {logos.map((p) => {
+          // Astro image objects have a `.format` property
+          const isGif = p.src.format === 'gif';
+
+          return (
+            <a
+              href={p.href}
+              class="logo-item"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={p.alt}
+            >
+              {isGif ? (
+                // Plain <img> → animation is preserved
+                <img
+                  src={p.src.src}
+                  alt={p.alt}
+                  class={p.class}
+                  width={p.src.width}
+                  height={p.src.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <Image
+                  src={p.src}
+                  alt={p.alt}
+                  class={p.class}
+                  widths={[120, 180, 240]}
+                  sizes="(max-width: 640px) 130px, 180px"
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
+              <span class="hovercard" aria-hidden="true">{p.alt}</span>
+            </a>
+          );
+        })}
       </div>
     </div>
   </div>
