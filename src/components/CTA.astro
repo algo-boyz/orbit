@@ -51,16 +51,8 @@ const t = useTranslations(Astro.currentLocale);
     </div>
 
     <div class="visual" aria-hidden="true">
-      <video
-        autoplay
-        loop
-        muted
-        playsinline
-        class="cube"
-        width="480"
-        height="480"
-        src="/cube.mp4"
-      ></video>
+      <!-- Live Three.js Resend-style cube (replaces /cube.mp4) -->
+      <canvas class="cube-canvas" width="520" height="520"></canvas>
     </div>
   </div>
 </section>
@@ -106,6 +98,18 @@ const t = useTranslations(Astro.currentLocale);
         btn.disabled = false;
       }
     });
+  }
+</script>
+
+<script>
+  // Mount the Resend-style cube once the canvas is in the DOM
+  import { mountResendCube } from '../scripts/resend-cube';
+
+  const canvas = document.querySelector('.cta .cube-canvas') as HTMLCanvasElement | null;
+  if (canvas) {
+    const handle = mountResendCube(canvas);
+    // Optional: clean up on page navigation (Astro view transitions etc.)
+    document.addEventListener('astro:before-swap', () => handle?.dispose(), { once: true });
   }
 </script>
 
@@ -164,15 +168,52 @@ const t = useTranslations(Astro.currentLocale);
     z-index: 2;
   }
 
-  /* Mobile: center the whole contact block */
+  /* Mobile: cube above form (Resend-style), then centered form */
   @media (max-width: 899px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Visual (cube) first — centered above form */
+    .visual {
+      order: -1;
+      min-height: 220px;
+      height: 260px;
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cube-canvas {
+      position: relative;
+      right: auto;
+      top: auto;
+      left: auto;
+      transform: none;
+      margin: 0;
+      width: min(68vw, 280px);
+      height: min(68vw, 280px);
+    }
+
+    .visual::before {
+      left: 50%;
+      right: auto;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: min(62vw, 260px);
+      height: min(62vw, 260px);
+    }
+
     .content {
+      order: 1;
       margin-inline: auto;
       text-align: center;
     }
 
     .form {
-      text-align: left; /* keep labels/inputs left-aligned inside the centered block */
+      text-align: left;
     }
 
     .note {
@@ -180,7 +221,7 @@ const t = useTranslations(Astro.currentLocale);
     }
 
     .btn {
-      margin-inline: auto; /* optional: center the submit button */
+      margin-inline: auto;
     }
   }
 
@@ -342,47 +383,45 @@ const t = useTranslations(Astro.currentLocale);
     color: var(--text);
   }
 
-/* —— Cube visual —— */
+/* —— Cube visual (live Three.js canvas) —— */
   .visual {
-    display: none;
+    display: block;
     position: relative;
     height: 100%;
-    min-height: 380px;
+    min-height: 240px;
     pointer-events: none;
-    /* Isolate blend mode scope to avoid blending with elements outside .visual */
-    isolation: isolate; 
+    isolation: isolate;
   }
 
   @media (min-width: 900px) {
     .visual {
-      display: block;
+      min-height: 380px;
     }
   }
 
-  .cube {
+  .cube-canvas {
     position: absolute;
-    right: -8%;
+    right: -4%;
     top: 50%;
-    transform: translateY(-52%);
-    width: min(52vw, 520px);
-    height: auto;
-    object-fit: contain;
+    transform: translateY(-50%);
+    width: min(42vw, 420px);
+    height: min(42vw, 420px);
+    display: block;
 
-    /* Force blend mode and mask out the square video edges */
-    mix-blend-mode: screen;
-    -webkit-mask-image: radial-gradient(circle at center, black 45%, transparent 80%);
-    mask-image: radial-gradient(circle at center, black 45%, transparent 80%);
+    /* Soft radial mask so the square canvas edges disappear into the page */
+    -webkit-mask-image: radial-gradient(circle at center, black 48%, transparent 82%);
+    mask-image: radial-gradient(circle at center, black 48%, transparent 82%);
   }
 
   /* soft radial glow behind the cube */
   .visual::before {
     content: "";
     position: absolute;
-    right: 5%;
+    right: 8%;
     top: 50%;
     transform: translateY(-50%);
-    width: min(48vw, 460px);
-    height: min(48vw, 460px);
+    width: min(40vw, 380px);
+    height: min(40vw, 380px);
     border-radius: 50%;
     background: radial-gradient(
       circle,
