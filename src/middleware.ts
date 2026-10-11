@@ -16,60 +16,50 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const { url, cookies, request, preferredLocale, redirect } = context;
   const pathname = url.pathname;
 
-  // Skip static assets, API routes, and anything that already has a locale prefix
+  // Skip static assets, API, files
   if (
     pathname.startsWith('/_') ||
     pathname.startsWith('/api') ||
     pathname.startsWith('/favicon') ||
-    pathname.includes('.') // files with extensions
+    pathname.includes('.')
   ) {
     return next();
   }
 
-  // If the path already starts with a known locale, let Astro i18n handle it
   const firstSegment = pathname.split('/').filter(Boolean)[0];
+
+  // Prefixed route → treat as explicit choice and remember it
   if (isValidLocale(firstSegment)) {
-    // Optionally refresh the cookie so the preference sticks
     cookies.set('lang', firstSegment, {
-      path: '/',
-      maxAge: 60 * 60 * 24 * 365, // 1 year
-      sameSite: 'lax',
-      httpOnly: false, // readable by client-side switcher if needed
-    });
-    return next();
-  }
-
-  // Only auto-redirect on the bare root (or other unprefixed pages if you expand later)
-  // For a single-page landing we mainly care about `/`
-  if (pathname !== '/' && pathname !== '') {
-    return next();
-  }
-
-  // 1. Cookie (explicit user choice – wins over browser/geo)
-  const cookieLang = cookies.get('lang')?.value;
-  if (isValidLocale(cookieLang)) {
-    if (cookieLang === defaultLocale) {
-      // User explicitly chose English → stay on /
-      // (optional: you can leave the cookie or delete it; keeping it is clearer)
-      return next();
-    }
-    // Non-default → redirect
-    return redirect(`/${cookieLang}/`, 302);
-  }
-
-  // 2. Browser preference (Accept-Language via Astro)
-  // ... only runs when there is NO valid lang cookie
-  if (preferredLocale && isValidLocale(preferredLocale) && preferredLocale !== defaultLocale) {
-    cookies.set('lang', preferredLocale, {
       path: '/',
       maxAge: 60 * 60 * 24 * 365,
       sameSite: 'lax',
       httpOnly: false,
+      secure: true, // HTTPS
     });
+    return next();
+  }
+
+  // Only auto-redirect the bare root
+  if (pathname !== '/' && pathname !== '') {
+    return next();
+  }
+
+  // 1. Explicit cookie (switcher or previous prefixed visit) — highest priority
+  const cookieLang = cookies.get('lang')?.value;
+  if (isValidLocale(cookieLang)) {
+    if (cookieLang === defaultLocale) {
+      return next(); // stay on /
+    }
+    return redirect(`/${cookieLang}/`, 302);
+  }
+
+  // 2. Browser preference — redirect only, do NOT set a permanent cookie
+  if (preferredLocale && isValidLocale(preferredLocale) && preferredLocale !== defaultLocale) {
     return redirect(`/${preferredLocale}/`, 302);
   }
-  
-  // 3. Cloudflare geo fallback
+
+  // 3. Cloudflare geo — redirect only, do NOT set a permanent cookie
   const country =
     request.headers.get('cf-ipcountry') ||
     // @ts-expect-error Cloudflare runtime
@@ -80,16 +70,10 @@ export const onRequest = defineMiddleware(async (context, next) => {
   if (country && typeof country === 'string') {
     const geoLocale = countryToLocale[country.toUpperCase()];
     if (geoLocale && geoLocale !== defaultLocale) {
-      cookies.set('lang', geoLocale, {
-        path: '/',
-        maxAge: 60 * 60 * 24 * 365,
-        sameSite: 'lax',
-        httpOnly: false,
-      });
       return redirect(`/${geoLocale}/`, 302);
     }
   }
 
-  // 4. Stay on default locale (English at /)
+  // 4. Default English
   return next();
 });

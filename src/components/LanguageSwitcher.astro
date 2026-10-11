@@ -38,7 +38,8 @@ function localizeBlogPath(path: string, target: Locale): string {
     aria-label="Select language"
     onchange="
       const lang = this.value;
-      document.cookie = 'lang=' + lang + '; path=/; max-age=31536000; SameSite=Lax';
+      const secure = location.protocol === 'https:' ? '; Secure' : '';
+      document.cookie = 'lang=' + lang + '; path=/; max-age=31536000; SameSite=Lax' + secure;
       window.location.href = this.options[this.selectedIndex].dataset.href;
     "
   >
