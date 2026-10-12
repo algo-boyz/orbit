@@ -12,7 +12,7 @@ import onnx from '../assets/banner/onnx.gif';
 import tensorflow from '../assets/banner/tf.png';
 import roboflow from '../assets/banner/roboflow.png';
 import rfdetr from '../assets/banner/rfdetr.png';
-import veruvian from '../assets/banner/logo.png';
+import veruvian from '../assets/banner/aj.gif';
 import huggingface from '../assets/banner/hf.gif';
 import bannerBg from '../assets/banner_bg.png';
 import { useTranslations } from '../i18n/ui';
@@ -21,6 +21,7 @@ const t = useTranslations(Astro.currentLocale);
 
 const partners = [
   { src: nvidia,     alt: 'NVIDIA',     href: 'https://www.nvidia.com', class: 'logo nvidia' },
+  { src: veruvian,   alt: 'AJ',         href: 'https://agentjetson.ai',   class: 'logo' },
   { src: grok,       alt: 'Grok / xAI', href: 'https://x.ai', class: 'logo' },
   { src: linux,      alt: 'Linux',      href: 'https://www.linuxfoundation.org/', class: 'logo' },
   { src: jetson,     alt: 'Jetson',     href: 'https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/', class: 'logo' },
@@ -28,12 +29,11 @@ const partners = [
   { src: rfdetr,     alt: 'RF-DETR',    href: 'https://rfdetr.roboflow.com', class: 'logo' },
   { src: huggingface,alt: 'Hugging Face', href: 'https://huggingface.co/',   class: 'logo' },
   { src: sherpa,     alt: 'Sherpa',     href: 'https://k2-fsa.github.io/sherpa/', class: 'logo' },
-  { src: veruvian,   alt: 'AJ',         href: 'https://agentjetson.ai',   class: 'logo' },
   { src: onnx,       alt: 'ONNX',       href: 'https://onnx.ai/', class: 'logo' },
   { src: roboflow,   alt: 'RoboFlow',   href: 'https://www.roboflow.com/', class: 'logo' },
   { src: cpp,        alt: 'CPP',        href: 'https://isocpp.org/', class: 'logo' },
-  { src: go,         alt: 'Golang',     href: 'https://go.dev/', class: 'logo' },
   { src: cloudflare, alt: 'CloudFlare', href: 'https://www.cloudflare.com', class: 'logo cloudflare' },
+  { src: go,         alt: 'Golang',     href: 'https://go.dev/', class: 'logo' },
 ];
 
 const logos = [...partners, ...partners];
