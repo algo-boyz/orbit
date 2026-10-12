@@ -29,14 +29,19 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const firstSegment = pathname.split('/').filter(Boolean)[0];
 
   // Prefixed route → treat as explicit choice and remember it
+  // if (isValidLocale(firstSegment)) {
+  //   cookies.set('lang', firstSegment, {
+  //     path: '/',
+  //     maxAge: 60 * 60 * 24 * 365,
+  //     sameSite: 'lax',
+  //     httpOnly: false,
+  //     secure: true, // HTTPS
+  //   });
+  //   return next();
+  // }
+
+  // Prefixed route → do NOT set cookie (passive visit / redirect target)
   if (isValidLocale(firstSegment)) {
-    cookies.set('lang', firstSegment, {
-      path: '/',
-      maxAge: 60 * 60 * 24 * 365,
-      sameSite: 'lax',
-      httpOnly: false,
-      secure: true, // HTTPS
-    });
     return next();
   }
 
